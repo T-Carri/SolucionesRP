@@ -17,7 +17,7 @@ import logo from '../assets/logo.png'
 import Image from 'next/image';
 
 
-const pages = ['Inicio', 'Nosotros', 'Servicios', 'Contacto', 'Cotiza ahora mismo'];
+const pages = ['Inicio', 'Servicios', 'Nosotros',  'Contacto', 'Cotiza ahora mismo'];
 //const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 
