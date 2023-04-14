@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google'
 import ResponsiveAppBar from '@/components/navbar'
 import { Carrousel } from '@/components/carousel'
 import Servicios from '@/components/servicios'
+import { Contacto } from '@/components/contacto'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -18,9 +19,13 @@ export default function Home() {
       </Head>
 
 <main>
-  <ResponsiveAppBar/>
-  <Carrousel/>
- <Servicios/>
+
+   <ResponsiveAppBar/>
+   <Carrousel/>
+   
+   <Contacto/>
+   <Servicios/>
+   
 
 </main>    
 

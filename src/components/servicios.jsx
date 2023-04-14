@@ -1,7 +1,7 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
+
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
+import Button from '@mui/material-next/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -9,14 +9,17 @@ import CardHeader from '@mui/material/CardHeader';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import StarIcon from '@mui/icons-material/StarBorder';
-import Toolbar from '@mui/material/Toolbar';
+
 import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
-import GlobalStyles from '@mui/material/GlobalStyles';
+import Carousel from 'react-material-ui-carousel';
+
 import Container from '@mui/material/Container';
+import Image from 'next/image';
+import soluciones from '../assets/Soluciones.jpg'
+import selloSiigo from '../assets/selloSiigo.png'
 
-
-
+import image1 from '../assets/1.jpg'
+import image5 from '../assets/5.jpg'
 const tiers = [
     {
       title: 'Soluciones administrables',
@@ -72,8 +75,8 @@ const tiers = [
           'Help center access',
           'Email support',
         ],
-        buttonText: 'Sign up for free',
-        buttonVariant: 'outlined',
+        buttonText: 'Quieres vender por internet?',
+        buttonVariant: 'contained',
       }, 
       {
         title: 'Licencias',
@@ -113,18 +116,37 @@ const tiers = [
       description: ['Privacy policy', 'Terms of use'],
     },
   ];
-  
 
-export const Servicio = () => {
-    return (
-        <React.Fragment>
-          
-          <CssBaseline />
-     
-          {/* Hero unit */}
-          <Container disableGutters maxWidth="sm" component="main" sx={{ pt: 8, pb: 6 }}>
-         <Grid></Grid>
-         <Grid>
+
+
+export const S1 = ()=> {
+  const imaServices = [
+    <Image style={{width:'100%', height:'100%'}} src={soluciones} />, // Usamos % en lugar de em o vh
+    <Image style={{width:'100%', height:'100%'}} src={selloSiigo} /> // Usamos % en lugar de em o vh
+  ];
+
+  
+  return (
+    <>
+       <Grid container   xl={12} lg={12} md={12} sm={12} xs={12}    direction="row"  justifyContent="center" alignItems="center"   sx={{ pt: 8, pb: 13 }}>
+         
+         <Grid item xl={6} lg={6} md={12} sm={12} xs={12} sx={{pt:0}} style={{ width: '30em', height: '30em'}}>
+<Grid container xl={12} lg={12} md={12} sm={12} xs={12} alignItems="center"  justifyContent="center"   > 
+<div style={{width:'100%', height:'15vh', position: 'relative'}}>
+  <Carousel indicators={false}>
+    {imaServices.map((image, index) => (
+      <div key={index} style={{position: 'relative'}}>
+        {image}
+      </div>
+    ))}
+  </Carousel>
+</div>
+
+  </Grid>
+
+         </Grid>
+         
+         <Grid item xl={6} lg={6} md={6} sm={6} xs={6} sx={{p:5, pt:5}} >
 
          <Typography
               component="h1"
@@ -133,17 +155,40 @@ export const Servicio = () => {
               color="text.primary"
               gutterBottom
             >
-              Servicios
+              Expertos en soluciones de negocios
             </Typography>
             <Typography variant="h5" align="center" color="text.secondary" component="p">
             Somos un proyecto mexicano que brinda soluciones tecnológicas a las pequeñas y medianas empresas, especializados en la automatización de procesos administrativos con las mejores alternativas para el cliente.
 
 Nuestras soluciones tecnológicas se apegan a estándares de calidad y facilitan el cumplimiento de las reformas fiscales actuales.
             </Typography>
+
+            <Button
+            style={{background:'#2979ff'}}
+  
+  disabled={false}
+  size="large"
+  variant="filled">
+      <Typography variant="h5" align="center" color="text.secondary" component="p" style={{color:'black'}} >Necesitas ayuda?</Typography></Button>
+
          </Grid>
 
            
-          </Container>
+          </Grid>
+    </>
+  )
+}
+
+  
+
+export const Servicio = () => {
+    return (
+        <>
+          
+         
+     
+          {/* Hero unit */}
+          <S1/>
           {/* End hero unit */}
           <Container maxWidth="xl" component="main">
             <Grid container spacing={5} alignItems="flex-end">
@@ -221,28 +266,19 @@ Nuestras soluciones tecnológicas se apegan a estándares de calidad y facilitan
               py: [3, 6],
             }}
           >
-            <Grid container spacing={4} justifyContent="space-evenly">
-              {footers.map((footer) => (
-                <Grid item xs={6} sm={3} key={footer.title}>
-                  <Typography variant="h6" color="text.primary" gutterBottom>
-                    {footer.title}
-                  </Typography>
-                  <ul>
-                    {footer.description.map((item) => (
-                      <li key={item}>
-                        <Link href="#" variant="subtitle1" color="text.secondary">
-                          {item}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+            <Grid container spacing={2}  xl={12} lg={12} md={12} sm={12} xs={12} direction='row' justifyContent="space-evenly">
+            <Grid item xl={6} lg={6} md={6} xs={6} xs={6} sm={3} >
+                         <Image src={selloSiigo}  style={{width: '20em', height: '15em'}}/>
                 </Grid>
-              ))}
+
+             <Grid item xl={6} lg={6} md={6} xs={6} xs={6} sm={3} >
+                         <Image src={selloSiigo}  style={{width: '20em', height: '15em'}}/>
+                </Grid>
             </Grid>
             
           </Container>
           {/* End footer */}
-        </React.Fragment>
+        </>
       );
 }
 

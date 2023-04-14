@@ -51,7 +51,7 @@ function ResponsiveAppBar() {
 
   return (
     <ThemeProvider theme={darkTheme}>
-    <AppBar position="static" st="true">
+    <AppBar position="fixed" st="true">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
             <Box sx={{ flexGrow: 3, display: { xs: 'none', md: 'flex' },  mr: 4, p:3}}>
