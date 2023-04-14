@@ -11,7 +11,7 @@ export const Contacto = () => {
       color="success"
       startIcon={<WhatsAppIcon  style={{height:'3em', width:'3em'}} />}
       style={{ 
-        opacity:'0.8',
+       
         position: 'fixed',
         bottom: '16px', // Puedes ajustar la posición vertical del botón
         right: '16px', // Puedes ajustar la posición horizontal del botón

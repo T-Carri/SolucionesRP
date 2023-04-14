@@ -25,7 +25,7 @@ const darkTheme = createTheme({
     palette: {
       
       primary: {
-        main: '#000000',
+        main: '#F6F1F1',
       },
     },
   });
@@ -51,11 +51,11 @@ function ResponsiveAppBar() {
 
   return (
     <ThemeProvider theme={darkTheme}>
-    <AppBar position="fixed" st="true">
+    <AppBar position="fixed" st="true" style={{zIndex: 9999}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-            <Box sx={{ flexGrow: 3, display: { xs: 'none', md: 'flex' },  mr: 4, p:3}}>
-  <Image src={logo} style={{width:'20vh', height:'10vh'}}   />   
+            <Box sx={{ flexGrow: 3, display: { xs: 'none', md: 'flex' },  mr: 4, p:2}}>
+  <Image src={logo} style={{width:'15vh', height:'8vh'}}   />   
 
             </Box>
         
@@ -70,7 +70,7 @@ function ResponsiveAppBar() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'black', display: 'block' }}
               >
                 {page}
               </Button>

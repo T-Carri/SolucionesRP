@@ -1,7 +1,8 @@
 import * as React from 'react';
 
 import Box from '@mui/material/Box';
-import Button from '@mui/material-next/Button';
+//import Button from '@mui/material-next/Button';
+import { Button } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -267,11 +268,11 @@ export const Servicio = () => {
             }}
           >
             <Grid container spacing={2}  xl={12} lg={12} md={12} sm={12} xs={12} direction='row' justifyContent="space-evenly">
-            <Grid item xl={6} lg={6} md={6} xs={6} xs={6} sm={3} >
+            <Grid item xl={6} lg={6} md={6} xs={6}  sm={3} >
                          <Image src={selloSiigo}  style={{width: '20em', height: '15em'}}/>
                 </Grid>
 
-             <Grid item xl={6} lg={6} md={6} xs={6} xs={6} sm={3} >
+             <Grid item xl={6} lg={6} md={6} xs={6} sm={3} >
                          <Image src={selloSiigo}  style={{width: '20em', height: '15em'}}/>
                 </Grid>
             </Grid>

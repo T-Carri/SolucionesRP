@@ -6,6 +6,7 @@ import ResponsiveAppBar from '@/components/navbar'
 import { Carrousel } from '@/components/carousel'
 import Servicios from '@/components/servicios'
 import { Contacto } from '@/components/contacto'
+import { CardContact } from '@/components/CardContact'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -22,7 +23,7 @@ export default function Home() {
 
    <ResponsiveAppBar/>
    <Carrousel/>
-   
+   <CardContact/>
    <Contacto/>
    <Servicios/>
    
