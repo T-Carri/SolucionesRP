@@ -11,7 +11,7 @@
   }
 
   .input {
-    max-width: 190px;
+    max-width: 350px;
     height: 44px;
     background-color: #05060f0a;
     border-radius: .5rem;
@@ -37,4 +37,99 @@
   
   .input-group:hover .label, .input:focus {
     color: #05060fc2;
+  }
+
+
+
+
+
+
+
+  button#hoverbutton {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #18181a;
+    color: #18181a;
+    display: inline-block;
+    font-size: 15px;
+    line-height: 15px;
+    padding: 18px 18px 17px;
+    text-decoration: none;
+    cursor: pointer;
+    background: #fff;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+   }
+   
+   button#hoverbutton span:first-child {
+    position: relative;
+    transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+    z-index: 10;
+   }
+   
+   button#hoverbutton span:last-child {
+    color: white;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+    z-index: 100;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translateY(225%) translateX(-50%);
+    height: 14px;
+    line-height: 13px;
+   }
+   
+   button#hoverbutton:after {
+    content: "";
+    position: absolute;
+    bottom: -50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    transform-origin: bottom center;
+    transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+    transform: skewY(9.3deg) scaleY(0);
+    z-index: 50;
+   }
+   
+   button#hoverbutton:hover:after {
+    transform-origin: bottom center;
+    transform: skewY(9.3deg) scaleY(2);
+   }
+   
+   button#hoverbutton:hover span:last-child {
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 1;
+    transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+   }
+
+
+
+   button#help {
+
+    padding: 15px 40px;
+    border: 0;
+    border-radius: 100px;
+    background-color: #187abb;
+    color: #ffffff;
+    font-weight: Bold;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+  }
+  
+  button#help:hover {
+    background-color: #6fc5ff;
+    box-shadow: 0 0 20px #6fc5ff50;
+  }
+  
+  button#help:active {
+    background-color: #3d94cf;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
   }

@@ -18,7 +18,7 @@ import Container from '@mui/material/Container';
 import Image from 'next/image';
 import soluciones from '../assets/Soluciones.jpg'
 import selloSiigo from '../assets/selloSiigo.png'
-
+import Rating from '@mui/material/Rating';
 import image1 from '../assets/1.jpg'
 import image5 from '../assets/5.jpg'
 const tiers = [
@@ -148,8 +148,10 @@ export const S1 = ()=> {
          </Grid>
          
          <Grid item xl={6} lg={6} md={6} sm={6} xs={6} sx={{p:5, pt:5}} >
-
-         <Typography
+<Grid container direction={'column'} justifyContent={"center"} alignItems={'center'}>
+<Grid item> <Rating name="read-only" value='5' readOnly size="large" /></Grid>
+     <Grid item>
+     <Typography
               component="h1"
               variant="h2"
               align="center"
@@ -158,20 +160,22 @@ export const S1 = ()=> {
             >
               Expertos en soluciones de negocios
             </Typography>
-            <Typography variant="h5" align="center" color="text.secondary" component="p">
-            Somos un proyecto mexicano que brinda soluciones tecnológicas a las pequeñas y medianas empresas, especializados en la automatización de procesos administrativos con las mejores alternativas para el cliente.
+     </Grid>
+     
+    
+            
+           
+<Grid item>            <button id='help'>
+    ¿Necesitas ayuda?
+</button>
+</Grid>
+            
+            </Grid>
 
-Nuestras soluciones tecnológicas se apegan a estándares de calidad y facilitan el cumplimiento de las reformas fiscales actuales.
-            </Typography>
 
-            <Button
-            style={{background:'#2979ff'}}
-  
-  disabled={false}
-  size="large"
-  variant="filled">
-      <Typography variant="h5" align="center" color="text.secondary" component="p" style={{color:'black'}} >Necesitas ayuda?</Typography></Button>
+           
 
+ 
          </Grid>
 
            
