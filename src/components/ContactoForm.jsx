@@ -18,12 +18,12 @@ import Rating from '@mui/material/Rating';
 
 export const S1 = ()=> {
     const imaServices = [
-      <Image style={{width:'100%', height:'70%'}} src={i3} />,
-      <Image style={{width:'100%', height:'70%'}} src={i2} />,
-      <Image style={{width:'100%', height:'70%'}} src={i5} />,
-      <Image style={{width:'100%', height:'70%'}} src={i1} />,
+      <Image key={'i1'}  alt='i1' style={{width:'100%', height:'70%'}} src={i3} />,
+      <Image key={'i2'} alt='i2' style={{width:'100%', height:'70%'}} src={i2} />,
+      <Image key={'i3'} alt='i3' style={{width:'100%', height:'70%'}} src={i5} />,
+      <Image key={'i4'} alt='i4' style={{width:'100%', height:'70%'}} src={i1} />,
       // Usamos % en lugar de em o vh
-      <Image style={{width:'100%', height:'70%'}} src={selloSiigo} /> // Usamos % en lugar de em o vh
+      <Image key={'i5'} alt='i5' style={{width:'100%', height:'70%'}} src={selloSiigo} /> // Usamos % en lugar de em o vh
     ];
   
     

@@ -7,8 +7,8 @@ import image3 from '../assets/3.jpg'
 import { Box } from '@mui/material';
 export const Carrousel = () => {
     const anArrayOfNumbers = [
-        <Image style={{width: '100%', height: '100vh',  opacity: 1}} src={image1}/>, 
-        <Image style={{width: '100%', height: '100vh', objectFit: 'cover', opacity: 0.8}} src={image5}/> 
+        <Image key={'1'} alt='1' style={{width: '100%', height: '100vh',  opacity: 1}} src={image1}/>, 
+        <Image  key={'2'} alt='2' style={{width: '100%', height: '100vh', objectFit: 'cover', opacity: 0.8}} src={image5}/> 
 
                          ];
   return (

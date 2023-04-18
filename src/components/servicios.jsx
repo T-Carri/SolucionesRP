@@ -63,14 +63,7 @@ const tiers = [ {
         title: 'Soporte tecnico',
         icon: <MiscellaneousServicesIcon fontSize="large" />,
         description: [
-          'Solicite soporte tecnico inmediato:',
-          <ul>
-            <li>Mantenimiento correctivo</li>
-            <li>Mantenimiento preventivo</li>
-            <li>Implementacion de correos empresariales</li>
-            <li>Respaldo de correos</li>
-            </ul>
-  
+          'Solicite soporte tecnico inmediato:'
          
         ],
         buttonText: 'Contacto',
@@ -80,7 +73,7 @@ const tiers = [ {
         title: 'Licencias',
         icon: <ShoppingCartIcon fontSize="large"/>,
         description: [
-          <Image src={i6}  style={{width: '100%', height: '100%'}}/>
+          <Image src={i6} alt='logo' key='aspel'  style={{width: '100%', height: '100%'}}/>
         ],
         buttonText: 'Contact us',
         buttonVariant: 'outlined',
@@ -213,11 +206,11 @@ export const Servicio = () => {
           >
             <Grid container spacing={2}  xl={12} lg={12} md={12} sm={12} xs={12} direction='row' justifyContent="space-evenly">
             <Grid item xl={6} lg={6} md={6} xs={6}  sm={3} >
-                         <Image src={selloSiigo}  style={{width: '20em', height: '15em'}}/>
+                         <Image src={selloSiigo} key='ss' alt='ss' style={{width: '20em', height: '15em'}}/>
                 </Grid>
 
              <Grid item xl={6} lg={6} md={6} xs={6} sm={3} >
-                         <Image src={selloSiigo}  style={{width: '20em', height: '15em'}}/>
+                         <Image src={selloSiigo} key='ss1' alt='ss1' style={{width: '20em', height: '15em'}}/>
                 </Grid>
             </Grid>
             

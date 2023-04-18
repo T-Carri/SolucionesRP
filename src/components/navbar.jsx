@@ -55,12 +55,12 @@ function ResponsiveAppBar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
             <Box sx={{ flexGrow: 3, display: { xs: 'none', md: 'flex' },  mr: 4, p:2}}>
-  <Image src={logo} style={{width:'15vh', height:'8vh'}}   />   
+  <Image alt='logo' src={logo} style={{width:'15vh', height:'8vh'}}   />   
 
             </Box>
         
 <Box sx={{ flexGrow: 4,  display: { xs: 'flex', md: 'none' }, mr: 18 }}>
-  <Image src={logo} style={{width:'20vh', height:'10vh'}}   />   
+  <Image src={logo}  alt='logo'  style={{width:'20vh', height:'10vh'}}   />   
 
             </Box>
 
