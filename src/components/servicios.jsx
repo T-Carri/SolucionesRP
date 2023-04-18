@@ -1,5 +1,5 @@
-import * as React from 'react';
 
+import {forwardRef, useState} from 'react'
 import Box from '@mui/material/Box';
 //import Button from '@mui/material-next/Button';
 import { Button } from '@mui/material';
@@ -7,195 +7,137 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
-import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import StarIcon from '@mui/icons-material/StarBorder';
-
 import Typography from '@mui/material/Typography';
-import Carousel from 'react-material-ui-carousel';
-
+import InsightsIcon from '@mui/icons-material/Insights';
+import LogoDevIcon from '@mui/icons-material/LogoDev';
+import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
+import LoopIcon from '@mui/icons-material/Loop';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import Diversity2Icon from '@mui/icons-material/Diversity2';
 import Container from '@mui/material/Container';
 import Image from 'next/image';
-import soluciones from '../assets/Soluciones.jpg'
 import selloSiigo from '../assets/selloSiigo.png'
-import Rating from '@mui/material/Rating';
-import image1 from '../assets/1.jpg'
-import image5 from '../assets/5.jpg'
-const tiers = [
+import Collapse from '@mui/material/Collapse';
+import i6 from '../assets/6.png'
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import Slide from '@mui/material/Slide';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+
+const tiers = [ {
+  title: 'Capacitaciones',
+  icon: <Diversity2Icon  fontSize="large" />,
+  description: [
+    '¿Desea aprender alguna técnica o habilidad nueva? Nosotros le ayudaremos en la enseñanza de múltiples herramientas de acuerdo a sus requerimientos.'
+    
+  ],
+  buttonText: 'Contact us',
+  buttonVariant: 'outlined',
+},  
     {
       title: 'Soluciones administrables',
-      price: '0',
+      icon: <InsightsIcon fontSize="large"/>,
       description: [
-        '10 users included',
-        '2 GB of storage',
-        'Help center access',
-        'Email support',
+        'Cuenta con nosotros para el diseño de la mejor estrategia que te permita la correcta administración de tus procesos o recursos.'
+       
       ],
-      buttonText: 'Boton',
+      buttonText: 'Ver mas',
       buttonVariant: 'outlined',
     },   {
         title: 'Soluciones Aspel',
-        price: '0',
+        icon: <LoopIcon fontSize="large"/>,
         description: [
-          '10 users included',
-          '2 GB of storage',
-          'Help center access',
-          'Email support',
+          'Contamos con el conocimiento y la experiencia necesaria para poder guiarle en las mejores prácticas relacionadas con el software ASPEL y de esta manera pueda aprovecharlo al máximo.'
+       
         ],
         buttonText: 'Sign up for free',
         buttonVariant: 'outlined',
       }, 
-    {
-      title: 'Capacitaciones',
-      price: '30',
-      description: [
-        '50 users included',
-        '30 GB of storage',
-        'Help center access',
-        'Phone & email support',
-      ],
-      buttonText: 'Contact us',
-      buttonVariant: 'outlined',
-    },     {
-        title: 'Soluciones de desarrollo',
-        price: '0',
+        {
+        title: 'Soporte tecnico',
+        icon: <MiscellaneousServicesIcon fontSize="large" />,
         description: [
-          '10 users included',
-          '2 GB of storage',
-          'Help center access',
-          'Email support',
+          'Solicite soporte tecnico inmediato:',
+          <ul>
+            <li>Mantenimiento correctivo</li>
+            <li>Mantenimiento preventivo</li>
+            <li>Implementacion de correos empresariales</li>
+            <li>Respaldo de correos</li>
+            </ul>
+  
+         
         ],
-        buttonText: 'Sign up for free',
+        buttonText: 'Contacto',
         buttonVariant: 'outlined',
-      },    {
-        title: 'Ecomerce',
-        price: '0',
-        description: [
-          '10 users included',
-          '2 GB of storage',
-          'Help center access',
-          'Email support',
-        ],
-        buttonText: 'Quieres vender por internet?',
-        buttonVariant: 'contained',
       }, 
       {
         title: 'Licencias',
-        price: '30',
+        icon: <ShoppingCartIcon fontSize="large"/>,
         description: [
-          '50 users included',
-          '30 GB of storage',
-          'Help center access',
-          'Phone & email support',
+          <Image src={i6}  style={{width: '100%', height: '100%'}}/>
         ],
         buttonText: 'Contact us',
         buttonVariant: 'outlined',
-      }
+      },  {
+        title: 'Soluciones de desarrollo',
+        icon: <LogoDevIcon  fontSize="large"/>,
+        description: [
+          'Contamos con el equipo necesario para ayudarte a desarrollar ese Software que necesitas, incluso para trabajar en conjunto y generar tu propio sitio web organizacional.'
+          
+        ],
+        buttonText: 'Sign up for free',
+        buttonVariant: 'outlined',
+      }, 
   ];
   
-  const footers = [
-    {
-      title: 'Company',
-      description: ['Team', 'History', 'Contact us', 'Locations'],
-    },
-    {
-      title: 'Features',
-      description: [
-        'Cool stuff',
-        'Random feature',
-        'Team feature',
-        'Developer stuff',
-        'Another one',
-      ],
-    },
-    {
-      title: 'Resources',
-      description: ['Resource', 'Resource name', 'Another resource', 'Final resource'],
-    },
-    {
-      title: 'Legal',
-      description: ['Privacy policy', 'Terms of use'],
-    },
-  ];
-
-
-
-export const S1 = ()=> {
-  const imaServices = [
-    <Image style={{width:'100%', height:'100%'}} src={soluciones} />, // Usamos % en lugar de em o vh
-    <Image style={{width:'100%', height:'100%'}} src={selloSiigo} /> // Usamos % en lugar de em o vh
-  ];
-
   
-  return (
-    <>
-       <Grid container   xl={12} lg={12} md={12} sm={12} xs={12}    direction="row"  justifyContent="center" alignItems="center"   sx={{ pt: 8, pb: 13 }}>
-         
-         <Grid item xl={6} lg={6} md={12} sm={12} xs={12} sx={{pt:0}} style={{ width: '30em', height: '30em'}}>
-<Grid container xl={12} lg={12} md={12} sm={12} xs={12} alignItems="center"  justifyContent="center"   > 
-<div style={{width:'100%', height:'15vh', position: 'relative'}}>
-  <Carousel indicators={false}>
-    {imaServices.map((image, index) => (
-      <div key={index} style={{position: 'relative'}}>
-        {image}
-      </div>
-    ))}
-  </Carousel>
-</div>
 
-  </Grid>
-
-         </Grid>
-         
-         <Grid item xl={6} lg={6} md={6} sm={6} xs={6} sx={{p:5, pt:5}} >
-<Grid container direction={'column'} justifyContent={"center"} alignItems={'center'}>
-<Grid item> <Rating name="read-only" value='5' readOnly size="large" /></Grid>
-     <Grid item>
-     <Typography
-              component="h1"
-              variant="h2"
-              align="center"
-              color="text.primary"
-              gutterBottom
-            >
-              Expertos en soluciones de negocios
-            </Typography>
-     </Grid>
-     
-    
-            
-           
-<Grid item>            <button id='help'>
-    ¿Necesitas ayuda?
-</button>
-</Grid>
-            
-            </Grid>
+  const themeContact = createTheme({
+    typography: {
+      fontFamily: [
+      '"Poppins"', 'sans-serif'   
+      ].join(','),
+    },
+  });
 
 
-           
 
- 
-         </Grid>
 
-           
-          </Grid>
-    </>
-  )
-}
+
+  const Transition = forwardRef(function Transition(props, ref) {
+    return <Slide direction="up" ref={ref} {...props} />;
+  });
 
   
 
 export const Servicio = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
     return (
         <>
           
          
      
           {/* Hero unit */}
-          <S1/>
+        
           {/* End hero unit */}
-          <Container maxWidth="xl" component="main">
+          <Container maxWidth="xl" component="main" sx={
+            {pt: 25}
+          }>
             <Grid container spacing={5} alignItems="flex-end">
               {tiers.map((tier) => (
                 // Enterprise card is full width at sm breakpoint
@@ -230,30 +172,28 @@ export const Servicio = () => {
                           alignItems: 'baseline',
                           mb: 2,
                         }}
-                      >
-                        <Typography component="h2" variant="h3" color="text.primary">
-                          ${tier.price}
-                        </Typography>
-                        <Typography variant="h6" color="text.secondary">
-                          /mo
-                        </Typography>
+                      > 
+                       {tier.icon}
+                    
+                      
                       </Box>
-                      <ul>
+                      
                         {tier.description.map((line) => (
-                          <Typography
-                            component="li"
-                            variant="subtitle1"
+                        <Typography
+                            component="text"
+                            variant="h5"
                             align="center"
                             key={line}
                           >
                             {line}
                           </Typography>
+                         
                         ))}
-                      </ul>
+                     
                     </CardContent>
-                    <CardActions>
-                      <Button fullWidth variant={tier.buttonVariant}>
-                        {tier.buttonText}
+                    <CardActions align="center" >
+                      <Button id='servicios'      align="center" fullWidth onClick={handleClickOpen} variant={tier.buttonVariant}>
+                      <ThemeProvider theme={themeContact}> {tier.buttonText}</ThemeProvider>    
                       </Button>
                     </CardActions>
                   </Card>
@@ -283,6 +223,27 @@ export const Servicio = () => {
             
           </Container>
           {/* End footer */}
+
+
+          <Dialog
+        open={open}
+        TransitionComponent={Transition}
+        keepMounted
+        onClose={handleClose}
+        aria-describedby="alert-dialog-slide-description"
+      >
+        <DialogTitle>{"Use Google's location service?"}</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-slide-description">
+            Let Google help apps determine location. This means sending anonymous
+            location data to Google, even when no apps are running.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Disagree</Button>
+          <Button onClick={handleClose}>Agree</Button>
+        </DialogActions>
+      </Dialog>
         </>
       );
 }

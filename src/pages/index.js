@@ -7,6 +7,7 @@ import { Carrousel } from '@/components/carousel'
 import Servicios from '@/components/servicios'
 import { Contacto } from '@/components/contacto'
 import { CardContact } from '@/components/CardContact'
+import {S1} from '@/components/ContactoForm'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -20,12 +21,15 @@ export default function Home() {
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet"></link>
       </Head>
 
 <main>
 
    <ResponsiveAppBar/>
    <Carrousel/>
+   <S1/>
+  
    <CardContact/>
    <Contacto/>
    <Servicios/>

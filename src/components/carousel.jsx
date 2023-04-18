@@ -13,10 +13,7 @@ export const Carrousel = () => {
                          ];
   return (
    <Box >
-    Aquí está el código ajustado para que el componente de Carousel tenga una imagen responsiva con opacidad:
-
-jsx
-Copy code
+  
 <div id='carousel' style={{width:'100%', height:'100vh'}}>
   <Carousel 
 indicators={false}>
