@@ -8,6 +8,7 @@ import Servicios from '@/components/servicios'
 import { Contacto } from '@/components/contacto'
 import { CardContact } from '@/components/CardContact'
 import {S1} from '@/components/Propaganda'
+import CssBaseline from '@mui/material/CssBaseline';
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -25,12 +26,13 @@ export default function Home() {
       </Head>
 
 <main>
+<CssBaseline />
 
    <ResponsiveAppBar/>
    <Carrousel/>
-   <S1/>
+    <S1/> 
   
-   <CardContact/>
+  {/*  <CardContact/> */}
    <Contacto/>
    <Servicios/>
    

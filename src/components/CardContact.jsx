@@ -26,10 +26,10 @@ const themeContact = createTheme({
 export const CardContact = () => {
 
   const imaServices = [
-    <Image key={'i12'}  alt='i1' style={{width:'100%', height:'70%'}} src={i3} />,
-    <Image key={'i22'} alt='i2' style={{width:'100%', height:'70%'}} src={i2} />,
-    <Image key={'i32'} alt='i3' style={{width:'100%', height:'70%'}} src={i5} />,
-    <Image key={'i42'} alt='i4' style={{width:'100%', height:'70%'}} src={i1} /> 
+    <Image key={'i12'}  alt='i1' style={{width:'100%', height:'90vh'}} src={i3} />,
+    <Image key={'i22'} alt='i2' style={{width:'100%', height:'90vh'}} src={i2} />,
+    <Image key={'i32'} alt='i3' style={{width:'100%', height:'90vh'}} src={i5} />,
+    <Image key={'i42'} alt='i4' style={{width:'100%', height:'90vh'}} src={i1} /> 
   ];
   return (
     <>
@@ -38,40 +38,41 @@ export const CardContact = () => {
 
 <Grid  container alignItems="center" xl={7} lg={7} md={12} sm={12} xs={12}   justifyContent="center" sx={
   (theme) => ({
-    height:600, width:750, p:0,
+     width:750, p:0,
     [theme.breakpoints.up("xl")]: {
       position: 'absolute',
-      top:1, 
+      top:50, 
        left:40, 
       zIndex: 8888,
-      height:800,
+      
     },
     [theme.breakpoints.up("lg")]: {
       position: 'absolute',
-      top:1, 
-       left:40, 
+      top:100, 
+      left:40, 
       zIndex: 8888,
-      height:500
+      
     },
     [theme.breakpoints.up("md")]: {
       position: 'absolute',
       top:100, 
       /* left:100, */
-      zIndex: 8888
+      zIndex: 8888,
+      
     },
     [theme.breakpoints.down("md")]: {
       position: 'absolute',
-      top: 0, 
-      height:900,
+      top: 50, 
+  
        width:1000,
       zIndex: 8888
     },
     [theme.breakpoints.up("sm")]: {
       position: 'absolute',
-     /*  top:100,  */
+      top:100, 
       /* left:35, */
       zIndex: 5555,
-      height:900,
+    
       width:1000,
     }, 
     [theme.breakpoints.down("sm")]: {
@@ -79,7 +80,7 @@ export const CardContact = () => {
      /*  top:150, */ 
       /* left:30, */
       zIndex: 5555,
-      height:900,
+      
       width:1000,
     }, 
     [theme.breakpoints.up("xs")]: {
@@ -87,21 +88,21 @@ export const CardContact = () => {
       /* top:100,  */
       /* left:0, */
       zIndex: 7777,
-      height:900,
+      
       width:1000,
      
       
     },
     [theme.breakpoints.down("xs")]: {
       position: 'absolute',
-      top:100, 
+       
      /*  left:0, */
       zIndex: 7777,
    
     }, 
   })
   }  > 
- <div style={{width:'100%', height:'70%', zIndex: 9999}}> 
+ <div style={{width:'100%', height:'90vh', zIndex: 9999}}> 
     <Carousel indicators={false}>
       {imaServices.map((image, index) => (
         <div key={index} style={{position: 'relative'}}>
