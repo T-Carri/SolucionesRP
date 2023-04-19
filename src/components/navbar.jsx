@@ -59,18 +59,18 @@ function ResponsiveAppBar() {
 
             </Box>
         
-<Box sx={{ flexGrow: 4,  display: { xs: 'flex', md: 'none' }, mr: 18 }}>
+<Box sx={{ flexGrow: 4,  display: { xs: 'flex', md: 'none' }, mr: 18, zIndex: 9999}}>
   <Image src={logo}  alt='logo'  style={{width:'20vh', height:'10vh'}}   />   
 
             </Box>
 
  
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', zIndex: 9999 } }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'black', display: 'block' }}
+                sx={{ my: 2, color: 'black', display: 'block', zIndex: 9999 }}
               >
                 {page}
               </Button>
@@ -104,12 +104,12 @@ function ResponsiveAppBar() {
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{
+              sx={{ zIndex: 9999,
                 display: { xs: 'block', md: 'none' },
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page} onClick={handleCloseNavMenu} sx={{ zIndex: 9999}}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}

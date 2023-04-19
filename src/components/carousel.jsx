@@ -7,18 +7,18 @@ import image3 from '../assets/3.jpg'
 import { Box } from '@mui/material';
 export const Carrousel = () => {
     const anArrayOfNumbers = [
-        <Image key={'1'} alt='1' style={{width: '100%', height: '100vh',  opacity: 1}} src={image1}/>, 
-        <Image  key={'2'} alt='2' style={{width: '100%', height: '100vh', objectFit: 'cover', opacity: 0.8}} src={image5}/> 
+        <Image key={'1'} alt='1' style={{width: '100%', height: '80%',  opacity: 1}} src={image1}/>, 
+        <Image  key={'2'} alt='2' style={{width: '100%', height: '80%', objectFit: 'cover'}} src={image5}/> 
 
                          ];
   return (
-   <Box >
+   <Box xl={12} lg={12} md={12} sm={12} xs={12} sx={{ display: { xs: 'none', md: 'none', sm:'none', lg:'block' } }}   >
   
-<div id='carousel' style={{width:'100%', height:'100vh'}}>
+<div id='carousel' style={{width:'100%'}}>
   <Carousel 
 indicators={false}>
     {anArrayOfNumbers.map((image, index) => (
-      <div key={index} style={{position: 'relative'}}>
+      <div key={index} style={{position: 'relative', height:'80%'}}>
 {image}
       </div>
     ))}
