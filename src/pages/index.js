@@ -9,6 +9,7 @@ import { Contacto } from '@/components/contacto'
 import { CardContact } from '@/components/CardContact'
 import {S1} from '@/components/Propaganda'
 import CssBaseline from '@mui/material/CssBaseline';
+import ChatWidget from '@/components/ChatWidget'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -36,6 +37,7 @@ export default function Home() {
    <Contacto/>
    <Servicios/>
    
+<ChatWidget/>
 
 </main>    
 

@@ -31,15 +31,24 @@ import PhonelinkRingRoundedIcon from '@mui/icons-material/PhonelinkRingRounded';
 import MarkunreadRoundedIcon from '@mui/icons-material/MarkunreadRounded';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import LocationOnRoundedIcon from '@mui/icons-material/LocationOnRounded';
+import {SolucionesAdmin} from '@/components/servicios/SolucionesAdmin'
+import {Capacitaciones} from '@/components/servicios/Capacitaciones'
+import {SolucionesAspel} from '@/components/servicios/SolucionesAspel'
+import { SolucionesDev } from './servicios/SolucionesDev';
+import SoporteTecnico from './servicios/SoporteTecnico';
+import { Licencias } from './servicios/Licencias';
+
 
 const tiers = [ {
   title: 'Capacitaciones',
+
   icon: <Diversity2Icon  fontSize="large" />,
   description: [
     '¿Desea aprender alguna técnica o habilidad nueva? Nosotros le ayudaremos en la enseñanza de múltiples herramientas de acuerdo a sus requerimientos.'
     
   ],
   buttonText: 'Ver mas',
+  button:'capacitaciones',
   buttonVariant: 'outlined',
 },  
     {
@@ -50,25 +59,31 @@ const tiers = [ {
        
       ],
       buttonText: 'Ver mas',
+     button:'solucionesadmin',
+      
       buttonVariant: 'outlined',
     },   {
         title: 'Soluciones Aspel',
+        
         icon: <LoopIcon fontSize="large"/>,
         description: [
           'Contamos con el conocimiento y la experiencia necesaria para poder guiarle en las mejores prácticas relacionadas con el software ASPEL y de esta manera pueda aprovecharlo al máximo.'
        
         ],
-        buttonText: 'Ver mas',
+        buttonText: 'Ver mas'  ,
+        button:'solucionesaspel',
         buttonVariant: 'outlined',
       }, 
           {
         title: 'Soluciones de desarrollo',
+       
         icon: <LogoDevIcon  fontSize="large"/>,
         description: [
           'Contamos con el equipo necesario para ayudarte a desarrollar ese Software que necesitas, adaptado a tus necesidades mejorando asi tus procesos. Genera tu propio sitio web organizacional.'
           
         ],
         buttonText: 'Ver mas',
+        button: 'solucionesdev',
         buttonVariant: 'outlined',
       }, {
         title: 'Soporte tecnico',
@@ -78,15 +93,17 @@ const tiers = [ {
          
         ],
         buttonText:'Ver mas',
+        button:'soportetecnico',
         buttonVariant: 'outlined',
       },
       {
         title: ['Licencias', '  ', '   ',  <ShoppingCartIcon />],
-    
+       
         description: [
           <Image src={i6} alt='logo' key='aspel'  style={{width: '100%', height: '100%'}}/>
         ],
         buttonText: 'Ver mas',
+        button:'licencias',
         buttonVariant: 'outlined',
       }, 
   ];
@@ -113,6 +130,14 @@ const tiers = [ {
 
 export const Servicio = () => {
   const [open, setOpen] = useState(false);
+ const [selectedButton, setSelectedButton] = useState(null)
+
+
+const handleButtonClick = (buttonName) =>{
+setSelectedButton(buttonName)
+console.log(buttonName)
+
+}
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -136,6 +161,12 @@ export const Servicio = () => {
             <Grid container spacing={5} alignItems="flex-end">
               {tiers.map((tier) => (
                 // Enterprise card is full width at sm breakpoint
+               
+              
+                    
+    
+               
+               
                 <Grid
                   item
                   key={tier.title}
@@ -143,6 +174,7 @@ export const Servicio = () => {
                   sm={tier.title === 'Enterprise' ? 12 : 6}
                   md={4}
                 >
+
                   <Card  sx={{height:620}}>
                     <CardHeader
                       title={tier.title}
@@ -184,13 +216,21 @@ export const Servicio = () => {
                           </Typography>
                          
                         ))}
-                     
+                
+
                     </CardContent>
                     <CardActions align="center" >
-                      <Button id='servicios'      align="center" fullWidth onClick={handleClickOpen} variant={tier.buttonVariant}>
+                      <Button id='servicios'      align="center" fullWidth onClick={()=>{try {
+                     handleButtonClick(tier.button), handleClickOpen() 
+                      console.log(tier.button)
+                      } catch (error) {
+                        console.log(error)
+                      }
+                        }} variant={tier.buttonVariant}>
                       <ThemeProvider theme={themeContact}> {tier.buttonText}</ThemeProvider>    
                       </Button>
                     </CardActions>
+
                   </Card>
                 </Grid>
               ))}
@@ -284,26 +324,32 @@ export const Servicio = () => {
          
           {/* End footer */}
 
-
+     
           <Dialog
-        open={open}
-        TransitionComponent={Transition}
-        keepMounted
-        onClose={handleClose}
-        aria-describedby="alert-dialog-slide-description"
-      >
-        <DialogTitle>{"Use Google's location service?"}</DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-slide-description">
-            Let Google help apps determine location. This means sending anonymous
-            location data to Google, even when no apps are running.
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose}>Disagree</Button>
-          <Button onClick={handleClose}>Agree</Button>
-        </DialogActions>
-      </Dialog>
+          open={open}
+        fullWidth="lg"
+        maxWidth="lg"
+          TransitionComponent={Transition}
+          keepMounted
+          onClose={handleClose}
+          aria-describedby="alert-dialog-slide-description"
+        >
+          <DialogTitle>{"Informacion"}</DialogTitle>
+          <DialogContent>
+         
+          {selectedButton === 'capacitaciones' && <Capacitaciones/>}
+          {selectedButton === 'solucionesadmin' && <SolucionesAdmin/>}
+          {selectedButton === 'solucionesaspel' &&  <SolucionesAspel/>}
+          {selectedButton === 'solucionesdev' &&  <SolucionesDev/>}
+          {selectedButton === 'soportetecnico' &&  <SoporteTecnico/>}
+          {selectedButton === 'licencias' &&  <Licencias/>}
+          </DialogContent>
+       
+          <DialogActions>
+            <Button onClick={handleClose}>Disagree</Button>
+            <Button onClick={handleClose}>Agree</Button>
+          </DialogActions>
+        </Dialog> 
         </>
       );
 }
