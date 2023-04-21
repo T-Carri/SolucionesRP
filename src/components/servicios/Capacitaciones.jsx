@@ -15,7 +15,7 @@ const Accordion = styled((props) => (
   border: `1px solid ${theme.palette.divider}`,
   '&:not(:last-child)': {
     borderBottom: 0,
-  },
+  },   
   '&:before': {
     display: 'none',
   },
@@ -72,7 +72,6 @@ export const Capacitaciones = () => {
             backgroundPosition: 'center',
             height:450
           }}>
-            
 <Imagetest/>
 
           </Grid>

@@ -35,22 +35,11 @@ import {SolucionesAdmin} from '@/components/servicios/SolucionesAdmin'
 import {Capacitaciones} from '@/components/servicios/Capacitaciones'
 import {SolucionesAspel} from '@/components/servicios/SolucionesAspel'
 import { SolucionesDev } from './servicios/SolucionesDev';
-import SoporteTecnico from './servicios/SoporteTecnico';
+import {SoporteTecnico} from './servicios/SoporteTecnico';
 import { Licencias } from './servicios/Licencias';
 
 
-const tiers = [ {
-  title: 'Capacitaciones',
-
-  icon: <Diversity2Icon  fontSize="large" />,
-  description: [
-    '¿Desea aprender alguna técnica o habilidad nueva? Nosotros le ayudaremos en la enseñanza de múltiples herramientas de acuerdo a sus requerimientos.'
-    
-  ],
-  buttonText: 'Ver mas',
-  button:'capacitaciones',
-  buttonVariant: 'outlined',
-},  
+const tiers = [   
     {
       title: 'Soluciones administrables',
       icon: <InsightsIcon fontSize="large"/>,
@@ -72,6 +61,17 @@ const tiers = [ {
         ],
         buttonText: 'Ver mas'  ,
         button:'solucionesaspel',
+        buttonVariant: 'outlined',
+      }, {
+        title: 'Capacitaciones',
+      
+        icon: <Diversity2Icon  fontSize="large" />,
+        description: [
+          '¿Desea aprender alguna técnica o habilidad nueva? Nosotros le ayudaremos en la enseñanza de múltiples herramientas de acuerdo a sus requerimientos.'
+          
+        ],
+        buttonText: 'Ver mas',
+        button:'capacitaciones',
         buttonVariant: 'outlined',
       }, 
           {
