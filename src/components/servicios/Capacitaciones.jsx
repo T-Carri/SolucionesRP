@@ -79,7 +79,7 @@ export const Capacitaciones = () => {
           md={8} xs={12}> 
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography>Sistemas Aspel</Typography>
+          <Typography variant="h6" gutterBottom><strong>Sistemas Aspel</strong></Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -92,7 +92,7 @@ export const Capacitaciones = () => {
       </Accordion>
       <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
         <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-          <Typography>Microsoft Office</Typography>
+          <Typography variant="h6" gutterBottom> <strong>Microsoft Office</strong></Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -105,7 +105,7 @@ export const Capacitaciones = () => {
       </Accordion>
       <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          <Typography>Lenguajes de programacion</Typography>
+          <Typography  variant="h6" gutterBottom><strong>Lenguajes de programacion</strong></Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>

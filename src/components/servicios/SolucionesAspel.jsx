@@ -180,34 +180,36 @@ No pierdas la oportunidad de mejorar la imagen de tu empresa con nuestros servic
        
   <Grid item sx={
     {width:550, 
-      display: {sm:'none', xs: 'none' , md:'none' }
+      display: {sm:'none', xs: 'none', lg:'flex', xl:'flex' }
    }
   }>
   <Imagetest/>
 
-  <Dialog  fullWidth="md"
-        maxWidth="mm" sx={{ width:600,
-     display: { lg:'none', xl:'none'  }
-  }}
-        /* fullScreen={fullScreen} */
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="responsive-dialog-title"
-      >
-          <Imagetest/>
-    
-          <Button onClick={handleClose} autoFocus>
-            ok
-          </Button>
-        
-      </Dialog>
+
   </Grid>
 
      
     </Grid>
 
+    <Dialog  fullWidth="md"
+      maxWidth="sm" sx={{ 
+   display: { lg:'none', xl:'none'  }
+}}
+      /* fullScreen={fullScreen} */
+      open={open}
+      onClose={handleClose}
+      aria-labelledby="responsive-dialog-title"
+    >
+        <Imagetest/>
+  
+        <Button onClick={handleClose} autoFocus>
+          ok
+        </Button>
+      
+    </Dialog>
 
     </Grid>
+
   )
 }
 

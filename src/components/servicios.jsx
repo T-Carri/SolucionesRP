@@ -37,7 +37,8 @@ import {SolucionesAspel} from '@/components/servicios/SolucionesAspel'
 import { SolucionesDev } from './servicios/SolucionesDev';
 import {SoporteTecnico} from './servicios/SoporteTecnico';
 import { Licencias } from './servicios/Licencias';
-
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 
 const tiers = [   
     {
@@ -329,12 +330,29 @@ console.log(buttonName)
           open={open}
         fullWidth="lg"
         maxWidth="lg"
+        sx={{zIndex:99999}}
           TransitionComponent={Transition}
           keepMounted
           onClose={handleClose}
           aria-describedby="alert-dialog-slide-description"
         >
-          <DialogTitle>{"Informacion"}</DialogTitle>
+          <DialogTitle>{"Informacion"}</DialogTitle>     
+          
+          
+              <IconButton
+          aria-label="close"
+          onClick={handleClose}
+          sx={{
+            position: 'absolute',
+            right: 8,
+            top: 8,
+            color: (theme) => theme.palette.grey[500],
+          }}
+        >
+          <CloseIcon />
+               </IconButton>
+
+
           <DialogContent>
          
           {selectedButton === 'capacitaciones' && <Capacitaciones/>}
