@@ -17,8 +17,29 @@ import logo from '../assets/logo.png'
 import Image from 'next/image';
 
 
-const pages = ['Inicio', 'Servicios', 'Nosotros',  'Contacto', 'Cotiza ahora mismo'];
+
+
 //const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = [
+  {
+    button:'Inicio', 
+    seccionWeb: '0',
+    seccionMov:'0'
+}, {
+  button:'Servicios', 
+  seccionWeb: '1300',
+  seccionMov: '500'
+
+}, {
+  button:'Nosotros', 
+  seccionWeb: '800', 
+  seccionMov: '800'
+},  {
+  button:'Contacto', 
+  seccionWeb: '2500', 
+  seccionMov: '5000'
+}
+  ];
 
 
 const darkTheme = createTheme({
@@ -34,6 +55,10 @@ function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
 
+
+
+
+
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -48,6 +73,14 @@ function ResponsiveAppBar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+const  scrollToSection  = (height) => {
+  if(typeof window!='undefined'){window.scrollTo({
+    top: height,
+    behavior:"smooth"
+  })}
+  
+}
 
   return (
     <ThemeProvider theme={darkTheme}>
@@ -68,11 +101,21 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', zIndex: 9999 } }}>
             {pages.map((page) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
+                key={page.button}
+                onClick={
+                  ()=>{
+                    try {
+                       scrollToSection(page.seccionWeb)
+                       
+                    } catch (error) {
+                      
+                    }
+                  }
+                 }
+               
                 sx={{ my: 2, color: 'black', display: 'block', zIndex: 9999 }}
               >
-                {page}
+                {page.button}
               </Button>
             ))}
           </Box>
@@ -109,8 +152,16 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu} sx={{ zIndex: 9999}}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page.button} onClick={   ()=>{
+                  try {
+                     scrollToSection(page.seccionMov)
+                 
+                  } catch (error) {
+                    
+                  }
+                }
+               } sx={{ zIndex: 9999}}>
+                  <Typography textAlign="center">{page.button}</Typography>
                 </MenuItem>
               ))}
             </Menu>

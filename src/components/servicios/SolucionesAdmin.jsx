@@ -6,7 +6,7 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
-import i1 from '../../assets/1.png'
+import sa1 from '../../assets/soladmin.png'
 import Image from 'next/image'
 import Imagetest from './Imagetest';
 
@@ -91,7 +91,7 @@ export const SolucionesAdmin = () => {
             backgroundPosition: 'center',
             height:450
           }}>
-<Imagetest/>
+<Image  style={{width:'100%', height:'65vh', opacity:'0.7'}} src={sa1}></Image>
 
           </Grid>
 <Grid item xl={7} lg={7} sm={8}

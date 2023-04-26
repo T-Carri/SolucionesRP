@@ -6,9 +6,21 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
-import i1 from '../../assets/1.png'
+import st1 from '../../assets/soportetec.png'
 import Image from 'next/image'
 import Imagetest from './Imagetest';
+
+
+
+
+const Div = styled('div')(({ theme }) => ({
+  ...theme.typography.button,
+  backgroundColor: theme.palette.background.paper,
+  padding: theme.spacing(2),
+}));
+
+
+
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
@@ -72,50 +84,37 @@ export const SoporteTecnico = () => {
             backgroundPosition: 'center',
             height:450
           }}>
-<Imagetest/>
+<Image  style={{width:'100%', height:'65vh'}} src={st1}></Image>
 
           </Grid>
 <Grid item xl={7} lg={7} sm={8}
           md={8} xs={12}> 
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography>Sistemas Aspel</Typography>
+          <Typography>Solicite soporte técnico correctivo </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
+            <Div>
+          El soporte técnico correctivo es el servicio que ofrecemos para solucionar problemas y errores en los sistemas informáticos de nuestros clientes. Nuestro objetivo es garantizar que sus equipos funcionen sin problemas y que puedan seguir trabajando sin interrupciones.
+Nuestros servicios incluyen:
+<ul>
+  <li> 1. Diagnóstico y resolución de problemas: nuestro equipo de técnicos altamente capacitados está disponible para resolver cualquier problema que puedan tener nuestros clientes. Desde problemas de hardware hasta problemas de software, podemos solucionarlos todos.</li>
+  <li>2. Mantenimiento preventivo: también ofrecemos servicios de mantenimiento preventivo para evitar problemas antes de que ocurran. Realizamos mantenimiento regular en los equipos de nuestros clientes para garantizar su correcto funcionamiento.</li>
+  <li>3. Actualizaciones de software y hardware: si los equipos de nuestros clientes necesitan actualizaciones, podemos proporcionarlas. Ya sea que necesiten una actualización de software o hardware, podemos hacerlo de manera rápida y eficiente.</li>
+  <li>4. Servicios de recuperación de datos: si algún cliente pierde datos importantes, estamos aquí para ayudar. Podemos recuperar datos perdidos debido a fallas de hardware o software.</li>
+  <li>5 . Consultoría y asesoramiento: además de nuestros servicios de soporte técnico correctivo, también ofrecemos consultoría y asesoramiento para ayudar a nuestros clientes a tomar decisiones informadas sobre sus sistemas informáticos.</li>
+
+</ul>
+
+</Div>
+
+
+
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-        <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-          <Typography>Microsoft Office</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
-        <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          <Typography>Lenguajes de programacion</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
+
     </Grid>
 
 

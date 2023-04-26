@@ -13,6 +13,17 @@ import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 //import useMediaQuery from '@mui/material/useMediaQuery'
 import Button from '@mui/material/Button';
+
+
+const Div = styled('div')(({ theme }) => ({
+  ...theme.typography.button,
+  backgroundColor: theme.palette.background.paper,
+  padding: theme.spacing(2),
+}));
+
+
+
+
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
@@ -85,8 +96,8 @@ const handleClose = () => {
           sm={4}
           md={4} 
           lg={5}      sx={{
-             backgroundImage: 'url(https://source.unsplash.com/random)',
-            backgroundRepeat: 'no-repeat', 
+            /*  backgroundImage: 'url(https://source.unsplash.com/random)',
+            backgroundRepeat: 'no-repeat',  */
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
             backgroundSize: 'cover',
@@ -94,7 +105,7 @@ const handleClose = () => {
             height:450
           }}>
 
-
+<Imagetest/>
           </Grid>
 <Grid item xl={7} lg={7} sm={8}
           md={8} xs={12} sx={{pl:3}}> 
@@ -109,6 +120,7 @@ const handleClose = () => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
+            <Div>
           Nos enfocamos en sistemas Aspel porque sabemos que son una herramienta esencial para el control de los procesos empresariales.
           <br />
           <br />
@@ -131,7 +143,7 @@ const handleClose = () => {
      
          </ul>
       
-
+         </Div>
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -142,6 +154,7 @@ const handleClose = () => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
+          <Div>
         <strong>Nuestros servicios:</strong>  
 <br />
 <ul>
@@ -153,7 +166,7 @@ const handleClose = () => {
 
 
 En nuestra empresa nos enfocamos en brindarte una atención personalizada y soluciones a medida para tus necesidades en sistemas Aspel. Nos aseguramos de que siempre cuentes con un servicio de calidad y apoyo técnico en todo momento. Si estás interesado en nuestros servicios, no dudes en contactarnos para más información. ¡Estamos para ayudarte!
-
+</Div>
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -163,6 +176,7 @@ En nuestra empresa nos enfocamos en brindarte una atención personalizada y solu
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
+          <Div>
           Te ofrecemos nuestros servicios de personalización de formatos o plantillas de Aspel. Sabemos lo importante que es tener una imagen profesional en tus facturas, cotizaciones y demás documentos de venta, por lo que queremos ayudarte a lograrlo.
        
        
@@ -172,6 +186,7 @@ Además, también podemos incorporar información adicional a tus documentos, co
 <br />
 {/* Al contratar nuestros servicios, te garantizamos un trabajo de calidad y a la medida de tus necesidades. Nos aseguramos de que la personalización de tus formatos de  Aspel sea funcional, atractiva y fácil de usar.
 No pierdas la oportunidad de mejorar la imagen de tu empresa con nuestros servicios de personalización de formatos o plantillas de  Aspel. Contáctanos para obtener más información y solicitar una cotización sin compromiso. ¡Estamos a tu disposición! */}
+       </Div>
           </Typography>
         </AccordionDetails>
       </Accordion>

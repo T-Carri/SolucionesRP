@@ -6,9 +6,21 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
-import i1 from '../../assets/1.png'
+import l1 from '../../assets/licencias.png'
 import Image from 'next/image'
 import Imagetest from './Imagetest';
+
+
+
+const Div = styled('div')(({ theme }) => ({
+  ...theme.typography.button,
+  backgroundColor: theme.palette.background.paper,
+  padding: theme.spacing(2),
+}));
+
+
+
+
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
@@ -72,50 +84,23 @@ export const Licencias = () => {
             backgroundPosition: 'center',
             height:450
           }}>
-<Imagetest/>
-
+<Image  style={{width:'100%', height:'65vh'}} src={l1}></Image>
           </Grid>
 <Grid item xl={7} lg={7} sm={8}
           md={8} xs={12}> 
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography>Sistemas Aspel</Typography>
+          <Typography>Licencias Aspel</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
+          <Div>
+          Mejora tu productividad y lleva el control de tu negocio al siguiente nivel con Aspel. Un software fácil de usar, confiable y seguro, que se adapta a tus necesidades y te ayuda a administrar tus operaciones de manera más eficiente. Con Aspel, puedes automatizar tareas clave como facturación, contabilidad y nómina, ahorrando tiempo y evitando errores costosos. Además, nuestra amplia variedad de productos te permite elegir la solución que mejor se adapte a tu empresa, desde pequeñas hasta grandes corporaciones. No esperes más, adquiere hoy mismo tu licencia Aspel y comienza a disfrutar de los beneficios de una gestión empresarial eficiente y efectiva.
+          </Div>
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-        <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-          <Typography>Microsoft Office</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
-        <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          <Typography>Lenguajes de programacion</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
+  
     </Grid>
 
 

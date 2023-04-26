@@ -7,13 +7,16 @@ import Carousel from 'react-material-ui-carousel';
 
 import Image from 'next/image';
 import Flayer from '../assets/flayerSRP.png'
-
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 
 import Rating from '@mui/material/Rating';
 import Container from '@mui/material/Container';
-
+import ChatWidget from './ChatWidget';
 
 export const S1 = ()=> {
+
+ /*  const {handleClick} = ChatWidget() */
   const [open, setOpen] = useState(true);
 
   const handleClickOpen = () => {
@@ -23,18 +26,18 @@ export const S1 = ()=> {
   const handleClose = () => {
     setOpen(false);
   }; 
-
+console.log(open)
 /*   useEffect(()=>{
     setOpen(true)
   },[]) */
     
     return (
-      <>
-         <Container       maxWidth="xl"  >
-           <Grid container xl={12} lg={12} md={12} sm={12} xs={12}   direction="row"  justifyContent="center" alignItems="center"   sx={{  width: 2000,
-        height: 500 }}>
-           <Grid item xl={6} lg={6} md={6} sm={6} xs={6}  sx={{pt:15 }}  >
-  <Grid container direction={'column'} justifyContent={"center"} alignItems={'center'}>
+      
+         <Container id="servicios"       maxWidth="xl"  >
+           <Grid container xl={12} lg={12} md={12} sm={12} xs={12}   direction="column"  justifyContent="center" alignItems="center"   sx={{  width: 2000,
+        height: 500, pt:20 }}>
+    {/*        <Grid item xl={6} lg={6} md={6} sm={6} xs={6}  sx={{pt:15 }}  >
+  <Grid container direction={'column'} justifyContent={"center"} alignItems={'center'}> */}
   <Grid item> <Rating name="read-only" value='5' readOnly size="large" /></Grid>
        <Grid item>
        <Typography
@@ -52,7 +55,7 @@ export const S1 = ()=> {
       
               
              
-  <Grid item>            <button id='help'>
+  <Grid item>            <button id='help' /* onClick={handleClick} */>
       ¿Necesitas ayuda?
   </button>
   </Grid>
@@ -63,19 +66,19 @@ export const S1 = ()=> {
              
   
    
-           </Grid>
-  <Grid item xl={6} lg={6} md={12} sm={12} xs={12}   style={{ width: '30em', height: '40em'}} sx={{pl:15, display: { sm:'none', md:'none', xs:'none' }}}>
+         {/*   </Grid> */}
+{/*   <Grid item xl={6} lg={6} md={12} sm={12} xs={12}   style={{ width: '30em', height: '40em'}} sx={{pl:15, display: { sm:'none', md:'none', xs:'none' }}}>
      <Grid  container xl={12} lg={12} md={12} sm={12} xs={12} direction={'row'} alignItems="center"  justifyContent="center" style={{ width: '30em', height: '40em'}}  >  
-     <Grid item align="center">
+   <Grid item align="center">
      <Image src={Flayer}  style={{height:'100%', width:'100%'}}/>
-     </Grid>
+     </Grid> 
 
     </Grid>
   
-           </Grid>
+           </Grid> */}
 
 
-           </Grid>
+       {/*     </Grid>  */}
         
            <Dialog  fullWidth="md"
       maxWidth="sm" sx={{ zIndex:99999,
@@ -86,6 +89,19 @@ export const S1 = ()=> {
       onClose={handleClose}
       aria-labelledby="responsive-dialog-title"
     >
+         
+         <IconButton
+          aria-label="close"
+          onClick={handleClose}
+          sx={{
+            position: 'absolute',
+            right: 8,
+            top: 8,
+            color: (theme) => theme.palette.grey[500],
+          }}
+        >
+          <CloseIcon />
+               </IconButton>
           <Image src={Flayer}  style={{height:'95vh', width:'100%'}}/>
   
         <Button onClick={handleClose} autoFocus>
@@ -95,7 +111,7 @@ export const S1 = ()=> {
     </Dialog>    
              
             </Container>
-      </>
+     
     )
   }
   

@@ -7,6 +7,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 export const Contacto = () => {
   return (
     <Button 
+    href="https://wa.me/5538978875" 
       variant="contained"
       color="success"
       align="center"

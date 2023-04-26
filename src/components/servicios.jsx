@@ -48,7 +48,7 @@ const tiers = [
         'Cuenta con nosotros para el diseño de la mejor estrategia que te permita la correcta administración de tus procesos o recursos.'
        
       ],
-      buttonText: 'Ver mas',
+      buttonText: 'Ver más',
      button:'solucionesadmin',
       
       buttonVariant: 'outlined',
@@ -60,7 +60,7 @@ const tiers = [
           'Contamos con el conocimiento y la experiencia necesaria para poder guiarle en las mejores prácticas relacionadas con el software ASPEL y de esta manera pueda aprovecharlo al máximo.'
        
         ],
-        buttonText: 'Ver mas'  ,
+        buttonText: 'Ver más'  ,
         button:'solucionesaspel',
         buttonVariant: 'outlined',
       }, {
@@ -71,7 +71,7 @@ const tiers = [
           '¿Desea aprender alguna técnica o habilidad nueva? Nosotros le ayudaremos en la enseñanza de múltiples herramientas de acuerdo a sus requerimientos.'
           
         ],
-        buttonText: 'Ver mas',
+        buttonText: 'Ver más',
         button:'capacitaciones',
         buttonVariant: 'outlined',
       }, 
@@ -80,20 +80,20 @@ const tiers = [
        
         icon: <LogoDevIcon  fontSize="large"/>,
         description: [
-          'Contamos con el equipo necesario para ayudarte a desarrollar ese Software que necesitas, adaptado a tus necesidades mejorando asi tus procesos. Genera tu propio sitio web organizacional.'
+          '¿Necesitas una página web?, Desarrollo app web y nativas.  Cotiza hoy mismo!'
           
         ],
-        buttonText: 'Ver mas',
+        buttonText: 'Ver más',
         button: 'solucionesdev',
         buttonVariant: 'outlined',
       }, {
-        title: 'Soporte tecnico',
+        title: 'Soporte técnico',
         icon: <MiscellaneousServicesIcon fontSize="large" />,
         description: [
-          'Solicite soporte tecnico inmediato.'
+          'Solicite soporte técnico inmediato.'
          
         ],
-        buttonText:'Ver mas',
+        buttonText:'Ver más',
         button:'soportetecnico',
         buttonVariant: 'outlined',
       },
@@ -103,7 +103,7 @@ const tiers = [
         description: [
           <Image src={i6} alt='logo' key='aspel'  style={{width: '100%', height: '100%'}}/>
         ],
-        buttonText: 'Ver mas',
+        buttonText: 'Ver más',
         button:'licencias',
         buttonVariant: 'outlined',
       }, 
@@ -239,7 +239,7 @@ console.log(buttonName)
           </Container>
           {/* Footer */}
         <Container>
-        <Grid container spacing={2}  xl={12} lg={12} md={12} sm={12} xs={12} direction='row' justifyContent="space-evenly" sx={{height:500, pt:10, p:5}}>
+        <Grid container spacing={2}  xl={12} lg={12} md={12} sm={12} xs={12} direction='row' justifyContent="space-evenly" sx={{height:500, pt:10}}>
             <Grid item xl={6} lg={6} md={6} xs={12}  sm={12} sx={{height:500, pt:10, p:5}}   >
             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3757.9554146372557!2d-99.3241631!3d19.6292038!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2191e6a1a801f%3A0xf759d47ce52d8660!2sSoluciones%20RP!5e0!3m2!1ses-419!2smx!4v1606688515176!5m2!1ses-419!2smx" style={{ width:"100%", height:"100%" }} ></iframe>
                 </Grid>
@@ -247,7 +247,7 @@ console.log(buttonName)
              <Grid item xl={6} lg={6} md={6} xs={12} sm={12}  >
 
 <Grid  container  direction='column'  justifyContent="center"
-  alignItems="center" rowSpacing={3} >
+  alignItems="center" rowSpacing={3} fixed>
 
 <Grid item xl={2} lg={2} md={2} xs={2} sm={2} >
                <Grid container direction='row'  justifyContent="center"
@@ -283,7 +283,7 @@ console.log(buttonName)
                          <Grid item xl={2} lg={2} md={2} xs={2} sm={2} >
                         
                          <Grid container direction='row'  justifyContent="center"
-  alignItems="center" spacing={{ xs: 2, md: 4 }}>
+  alignItems="center" spacing={{ xs: 2, md: 4 }} >
                 <Grid item>
                 <MarkunreadRoundedIcon/> 
                 </Grid>
@@ -364,8 +364,8 @@ console.log(buttonName)
           </DialogContent>
        
           <DialogActions>
-            <Button onClick={handleClose}>Disagree</Button>
-            <Button onClick={handleClose}>Agree</Button>
+            
+            <Button onClick={handleClose}>OK</Button>
           </DialogActions>
         </Dialog> 
         </>
