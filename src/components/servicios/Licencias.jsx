@@ -84,7 +84,7 @@ export const Licencias = () => {
             backgroundPosition: 'center',
             height:450
           }}>
-<Image  style={{width:'100%', height:'65vh'}} src={l1}></Image>
+<Image alt='l1' style={{width:'100%', height:'65vh'}} src={l1}></Image>
           </Grid>
 <Grid item xl={7} lg={7} sm={8}
           md={8} xs={12}> 

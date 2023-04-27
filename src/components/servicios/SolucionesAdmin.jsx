@@ -91,7 +91,7 @@ export const SolucionesAdmin = () => {
             backgroundPosition: 'center',
             height:450
           }}>
-<Image  style={{width:'100%', height:'65vh', opacity:'0.7'}} src={sa1}></Image>
+<Image alt='sa1' style={{width:'100%', height:'65vh', opacity:'0.7'}} src={sa1}></Image>
 
           </Grid>
 <Grid item xl={7} lg={7} sm={8}

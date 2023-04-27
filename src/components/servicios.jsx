@@ -98,7 +98,7 @@ const tiers = [
         buttonVariant: 'outlined',
       },
       {
-        title: ['Licencias', '  ', '   ',  <ShoppingCartIcon />],
+        title: <ShoppingCartIcon />,
        
         description: [
           <Image src={i6} alt='logo' key='aspel'  style={{width: '100%', height: '100%'}}/>
