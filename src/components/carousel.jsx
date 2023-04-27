@@ -3,13 +3,14 @@ import Carousel from 'react-material-ui-carousel';
 import Image from 'next/image';
 import image1 from '../assets/1.jpg'
 import image5 from '../assets/5.jpg'
-import image3 from '../assets/3.jpg'
+import cartaporte from '../assets/cartaporte.png'
 import { Box, Container } from '@mui/material';
 export const Carrousel = () => {
     const anArrayOfNumbers = [
-        <Image key={'1'} alt='1' style={{width: '100%', height: '100vh',  opacity: 1}} src={image1}/>, 
-        <Image  key={'2'} alt='2' style={{width: '100%', height: '100vh', objectFit: 'cover'}} src={image5}/> 
-
+      
+      <Image  key={'1'} alt='1' style={{width: '100%', height: '100vh', objectFit: 'cover'}} src={image5}/>, 
+      <Image  key={'2'} alt='2' style={{width: '100%', height: '100vh', objectFit: 'cover'}} src={cartaporte}/>, 
+        <Image key={'3'} alt='3' style={{width: '100%', height: '100vh',  opacity: 1}} src={image1}/> 
                          ];
   return (
     

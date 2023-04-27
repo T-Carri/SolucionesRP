@@ -13,11 +13,13 @@ import CloseIcon from '@mui/icons-material/Close';
 import Rating from '@mui/material/Rating';
 import Container from '@mui/material/Container';
 import ChatWidget from './ChatWidget';
+import { Popover } from './Popover';
 
 export const S1 = ()=> {
 
  /*  const {handleClick} = ChatWidget() */
   const [open, setOpen] = useState(true);
+  const [cardOn, setCardOn] = useState(false)
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -34,6 +36,8 @@ console.log(open)
     return (
       
          <Container id="servicios"       maxWidth="xl"  >
+{cardOn&&<Popover/>}
+
            <Grid container xl={12} lg={12} md={12} sm={12} xs={12}   direction="column"  justifyContent="center" alignItems="center"   sx={{  width: 2000,
         height: 500, pt:20 }}>
     {/*        <Grid item xl={6} lg={6} md={6} sm={6} xs={6}  sx={{pt:15 }}  >
@@ -55,7 +59,7 @@ console.log(open)
       
               
              
-  <Grid item>            <button id='help' /* onClick={handleClick} */>
+  <Grid item>            <button id='help' onClick={()=>setCardOn(true)} >
       ¿Necesitas ayuda?
   </button>
   </Grid>
@@ -102,7 +106,7 @@ console.log(open)
         >
           <CloseIcon />
                </IconButton>
-          <Image src={Flayer}  style={{height:'95vh', width:'100%'}}/>
+          <Image src={Flayer} alt='flayer' style={{height:'95vh', width:'100%'}}/>
   
         <Button onClick={handleClose} autoFocus>
           ok
@@ -111,6 +115,8 @@ console.log(open)
     </Dialog>    
              
             </Container>
+
+
      
     )
   }
