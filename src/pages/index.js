@@ -2,16 +2,31 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 //import styles from '@/styles/Home.module.css'
-import ResponsiveAppBar from '@/components/navbar'
-import { Carrousel } from '@/components/carousel'
-import Servicios from '@/components/servicios'
-import { Contacto } from '@/components/contacto'
-import { CardContact } from '@/components/CardContact'
-import {S1} from '@/components/Propaganda'
-import CssBaseline from '@mui/material/CssBaseline';
-import ChatWidget from '@/components/ChatWidget'
-import { Popover } from '@/components/Popover'
+import { TopNav } from '@/components/top-nav';
+import { styled } from '@mui/material/styles';
+
 const inter = Inter({ subsets: ['latin'] })
+
+
+const SIDE_NAV_WIDTH = 280;
+const LayoutRoot = styled('div')(() => ({
+  display: 'flex',
+  flex: '1 1 auto',
+  maxWidth: '100%',
+  marginTop:'4em'
+/*   [theme.breakpoints.up('lg')]: {
+    paddingLeft: SIDE_NAV_WIDTH
+  } */
+}));
+const LayoutContainer = styled('div')({
+  display: 'flex',
+  flex: '1 1 auto',
+  flexDirection: 'column',
+  width: '100%'
+});
+
+
+
 
 export default function Home() {
   return (
@@ -27,20 +42,18 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet"></link>
       </Head>
 
-<main>
-<CssBaseline />
+      <LayoutRoot>
+        <LayoutContainer>
+        <main>
 
-   <ResponsiveAppBar/>
-   <Carrousel/>
-    <S1/> 
-{/*   <Popover/> */}
-  {/*  <CardContact/> */}
-   <Contacto/>
-   <Servicios/>
+<TopNav/>
+
+
+</main> 
+</LayoutContainer>
+      </LayoutRoot>
+
    
-<ChatWidget/>
-
-</main>    
 
     </>
   )
