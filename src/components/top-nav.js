@@ -7,6 +7,7 @@ import {
   Avatar,
   Badge,
   Box,
+  Card,
   IconButton,
   Stack,
   SvgIcon,
@@ -19,7 +20,7 @@ import { useTheme } from '@mui/material/styles';
 /* import { usePopover } from 'src/hooks/use-popover';
 import { AccountPopover } from './account-popover'; */
 
-const SIDE_NAV_WIDTH = 280;
+const SIDE_NAV_WIDTH = 0;
 const TOP_NAV_HEIGHT = 64;
 
 export const TopNav = () => {
@@ -33,40 +34,44 @@ export const TopNav = () => {
       <Box
         component="header"
         sx={{
-          backdropFilter: 'blur(6px)',
+          backdropFilter: 'blur(10px)',
           backgroundColor: (theme) => alpha(theme.palette.background.default, 0.8),
-          position: 'sticky',
+          position: 'fixed',
           left: {
             lg: `${SIDE_NAV_WIDTH}px`
           },
           top: 0,
           width: {
-            lg: `calc(100% - ${SIDE_NAV_WIDTH}px)`
+            lg: `calc(100% - ${SIDE_NAV_WIDTH}px)`, 
+            md: 400, 
+            sm:740,
+            xm: 1000
+
           },
-          zIndex: (theme) => theme.zIndex.appBar
-        }}
+
+          zIndex:8888/* (theme) => theme.zIndex.appBar */
+        }}  
+        
       >
         <Stack
-          alignItems="center"
+          alignItems="start"
+          justifyContent="flex-end"
           direction="row"
-          justifyContent="space-between"
+          
           spacing={2}
           sx={{
             minHeight: TOP_NAV_HEIGHT,
             px: 2
           }}
         >
-            <Typography>
-                test
-            </Typography>
-       {/*    <Stack
+           <Stack
             alignItems="center"
             direction="row"
             spacing={2}
           >
         
-     
-          </Stack> */}
+     testssssssssssssssss
+          </Stack> 
           <Stack
             alignItems="center"
             direction="row"
@@ -77,22 +82,12 @@ export const TopNav = () => {
             
               </IconButton>
             </Tooltip>
-            <Tooltip title="Notifications">
-              <IconButton>
-                <Badge
-                  badgeContent={4}
-                  color="success"
-                  variant="dot"
-                >
-        
-                </Badge>
-              </IconButton>
-            </Tooltip>
+       
     
           </Stack>
         </Stack>
-      </Box>
    
+      </Box>
     </>
   );
 };

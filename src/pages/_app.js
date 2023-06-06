@@ -1,5 +1,5 @@
-import '@/styles/globals.css'
-import '@/styles/fonts.css'
+import '@/styles/style.css'
+
 import { createTheme } from '@/theme'
 import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline';

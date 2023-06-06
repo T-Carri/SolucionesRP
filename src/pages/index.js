@@ -4,7 +4,10 @@ import { Inter } from 'next/font/google'
 //import styles from '@/styles/Home.module.css'
 import { TopNav } from '@/components/top-nav';
 import { styled } from '@mui/material/styles';
-
+import { Box } from '@mui/system';
+import { Card, Grid, CardContent } from '@mui/material';
+import Hero from '@/components/Hero';
+import SVG from '../assets/trace.svg'
 const inter = Inter({ subsets: ['latin'] })
 
 
@@ -13,7 +16,7 @@ const LayoutRoot = styled('div')(() => ({
   display: 'flex',
   flex: '1 1 auto',
   maxWidth: '100%',
-  marginTop:'4em'
+  marginTop:'0em'
 /*   [theme.breakpoints.up('lg')]: {
     paddingLeft: SIDE_NAV_WIDTH
   } */
@@ -29,6 +32,16 @@ const LayoutContainer = styled('div')({
 
 
 export default function Home() {
+
+    const handleHover = (event) => {
+      event.currentTarget.style.transform = 'scale(1.1)'; // Cambiar el tamaño al 110%
+    };
+  
+    const handleLeave = (event) => {
+      event.currentTarget.style.transform = 'scale(.5)'; // Volver al tamaño original
+    };
+
+
   return (
     <>
       <Head>
@@ -42,11 +55,46 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet"></link>
       </Head>
 
+{/* <TopNav/> */}
+
       <LayoutRoot>
         <LayoutContainer>
         <main>
 
-<TopNav/>
+          
+    <Image src={SVG} alt="Icon" width={115} height={115}  style={{ width:'100%', zIndex:9999, right:520, top:13, position:'fixed' }}  />
+    <TopNav/>
+    
+    <Card elevation={0} sx={{height:130, width:200, backgroundColor: 'white', ml:15, p:2}} style={{  position: 'fixed', zIndex:7777}}>
+    
+
+          </Card>
+<Hero/>
+
+<Grid container spacing={2} direction={'row'} justifyContent={'center'} alignItems={'center'} sx={{position:'fixed' }} style={{top:350}}>
+<Grid item> 
+<Card elevation={0} sx={{height:380, width:450, backgroundColor: 'white'}} style={{display:'fixed'}}  onMouseEnter={handleHover}
+          onMouseLeave={handleLeave} >
+<CardContent> 
+  test
+</CardContent>
+
+      </Card>
+      </Grid>
+<Grid item>
+<Card elevation={0} sx={{height:380, width:450, backgroundColor: 'white'}} style={{display:'fixed'}}   onMouseEnter={handleHover}
+          onMouseLeave={handleLeave}>
+      </Card>
+</Grid>
+<Grid item>
+<Card elevation={0} sx={{height:380, width:450, backgroundColor: 'white'}} style={{display:'fixed'}}  onMouseEnter={handleHover}
+          onMouseLeave={handleLeave} >
+      </Card>
+</Grid>
+
+</Grid>
+
+<Box  height={135} style={{backgroundColor: 'white', display:'absolute'}}  >  </Box>
 
 
 </main> 
