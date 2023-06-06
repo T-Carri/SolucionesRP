@@ -69,8 +69,10 @@ export default function Home() {
     
 
           </Card>
+
 <Hero/>
 
+``
 <Grid container spacing={2} direction={'row'} justifyContent={'center'} alignItems={'center'} sx={{position:'fixed' }} style={{top:350}}>
 <Grid item> 
 <Card elevation={0} sx={{height:380, width:450, backgroundColor: 'white'}} style={{display:'fixed'}}  onMouseEnter={handleHover}
@@ -94,7 +96,7 @@ export default function Home() {
 
 </Grid>
 
-<Box  height={135} style={{backgroundColor: 'white', display:'absolute'}}  >  </Box>
+<Box  height={135} style={{backgroundColor: 'white', display:'absolute'}}  > FOOTER </Box>
 
 
 </main> 

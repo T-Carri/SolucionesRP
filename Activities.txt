@@ -1,0 +1,12 @@
+
+
+
+create an exclusive file for  each components
+
+:icon 
+
+:cards menu 
+
+:footer
+
+
