@@ -8,6 +8,7 @@ import { Box } from '@mui/system';
 import { Card, Grid, CardContent } from '@mui/material';
 import Hero from '@/components/Hero';
 import SVG from '../assets/trace.svg'
+import Carousel from '@/components/Carousel';
 const inter = Inter({ subsets: ['latin'] })
 
 
@@ -22,10 +23,10 @@ const LayoutRoot = styled('div')(() => ({
   } */
 }));
 const LayoutContainer = styled('div')({
-  display: 'flex',
+   display: 'flex',
   flex: '1 1 auto',
   flexDirection: 'column',
-  width: '100%'
+  width: '100%' 
 });
 
 
@@ -69,41 +70,20 @@ export default function Home() {
     
 
           </Card>
-
+        
 <Hero/>
 
-``
-<Grid container spacing={2} direction={'row'} justifyContent={'center'} alignItems={'center'} sx={{position:'fixed' }} style={{top:350}}>
-<Grid item> 
-<Card elevation={0} sx={{height:380, width:450, backgroundColor: 'white'}} style={{display:'fixed'}}  onMouseEnter={handleHover}
-          onMouseLeave={handleLeave} >
-<CardContent> 
-  test
-</CardContent>
 
-      </Card>
-      </Grid>
-<Grid item>
-<Card elevation={0} sx={{height:380, width:450, backgroundColor: 'white'}} style={{display:'fixed'}}   onMouseEnter={handleHover}
-          onMouseLeave={handleLeave}>
-      </Card>
-</Grid>
-<Grid item>
-<Card elevation={0} sx={{height:380, width:450, backgroundColor: 'white'}} style={{display:'fixed'}}  onMouseEnter={handleHover}
-          onMouseLeave={handleLeave} >
-      </Card>
-</Grid>
+<Carousel />
 
-</Grid>
-
-<Box  height={135} style={{backgroundColor: 'white', display:'absolute'}}  > FOOTER </Box>
+<Box  height={300} style={{backgroundColor: 'red', position:'absolute',  marginTop:'0%'}}  ></Box>
 
 
 </main> 
 </LayoutContainer>
       </LayoutRoot>
 
-   
+  
 
     </>
   )

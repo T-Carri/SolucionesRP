@@ -24,7 +24,10 @@ export default function Hero() {
         backgroundImage: `url(${backgroundImage})`,
         backgroundColor: '#7fc7d9', // Average color of the background image.
         backgroundPosition: 'center',
+        
       }}
+
+      
     >
         
       {/* Increase the network loading priority of the background image. */}
@@ -41,7 +44,7 @@ export default function Hero() {
         color="inherit"
         align="center"
         variant="h5"
-        sx={{ mb: 4, mt: { xs: 4, sm: 10 } }}
+        sx={{ mb: 0, mt: { xs: 2, sm: 3 } }}
       >
         {/* Enjoy secret offers up to -70% off the best luxury hotels every Sunday. */}
       </Typography>

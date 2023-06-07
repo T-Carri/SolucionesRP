@@ -27,22 +27,23 @@ const Background = styled(Box)({
   zIndex: -2,
 });
 
+
 function ProductHeroLayout(props) {
   const { sxBackground, children } = props;
 
   return (
-    <div style={{width:'100%', display:'absolute'}}>
     <ProductHeroLayoutRoot>
-      <Container 
-        sx={{
-          mt: 0,
-          mb: 14,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-        }}
+      <Container /* sm={12} xs={12} xl={12} lg={12} md={12} */
+       sx={{
+        mt: 3,
+        mb: 14,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      }}
+        
+        disableGutters={true}
       >
-    
         {children}
         <Box
           sx={{
@@ -54,15 +55,14 @@ function ProductHeroLayout(props) {
             backgroundColor: 'common.black',
             opacity: 0.1,
             zIndex: -1,
-          }} 
+          }}
         />
-        <Background sx={sxBackground}  className="zoom-image" />
-      
+        <Background sx={sxBackground}  className="zoom-image"  />
       </Container>
     </ProductHeroLayoutRoot>
-    </div>
   );
 }
+
 
 ProductHeroLayout.propTypes = {
   children: PropTypes.node,
