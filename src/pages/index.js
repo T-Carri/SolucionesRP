@@ -9,9 +9,10 @@ import { Card, Grid, CardContent, Container } from '@mui/material';
 import { Presentacion } from '@/components/Presentacion';
 import { Servicios } from '@/components/Servicios';
 import { Clientes } from '@/components/Clientes';
-
+import nubes from '../assets/clouds.svg'
 
 const inter = Inter({ subsets: ['latin'] })
+const backgroundImage = 'https://images.unsplash.com/photo-1541415534056-fad380cd68a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=706&q=80'
 
 
 const SIDE_NAV_WIDTH = 280;
@@ -30,7 +31,8 @@ const LayoutContainer = styled('div')({
   flex: '1 1 auto',
   flexDirection: 'column',
   width: '100%',
- 
+/*   backgroundImage:`url(${backgroundImage})`,  */
+ /*  backgroundSize: 'cover' */
 
 });
 

@@ -7,9 +7,9 @@ export const Servicios = () => {
     justifyContent="center"
     alignItems="center"  xl={12} lg={12} md={12} sm={12} xs={12} style={{backgroundColor:'#19376D', marginTop:50, height:700 }} disableGutters>
 
-<Grid item style={{backgroundColor:'black',  height:'70%', width:'100%' }} >
-<Carousel/>
-</Grid>
+ <Grid item style={{backgroundColor:'#ECF8F9',  height:'80%', width:'100%' }} sx={{p:3}} >
+ <Carousel/> 
+</Grid> 
     </Grid>
   )
 }

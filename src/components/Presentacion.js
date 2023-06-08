@@ -3,10 +3,11 @@ import Grid from '@mui/system/Unstable_Grid/Grid'
 import 'animate.css';
 import Image from 'next/image';
 import SVG from '../assets/sapiens.svg'
-import { Typography, Button } from '@mui/material';
+import nubes from '../assets/clouds.svg'
+import { Typography, Button, Box } from '@mui/material';
 import { useInView } from 'react-intersection-observer';
 
-const nubes= '../assets/clouds.svg'
+const test = 'https://images.unsplash.com/photo-1605478185737-99ae313e940c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTU2fHx0ZXh0dXJhc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60'
 const backgroundImage = 'https://mui.com/static/themes/onepirate/productCurvyLines.png'
 
 export const Presentacion = () => {
@@ -26,6 +27,8 @@ const [ref, inView, entry] = useInView(options);
 
 
 
+
+
     const [ref, inView, entry] = useInView({
       triggerOnce: true, // Solo activar una vez
     });
@@ -36,14 +39,21 @@ const [ref, inView, entry] = useInView(options);
       }
     }, [inView]);
 
+    
+
   return (
-    <Grid container xl={12} lg={12} md={12} sm={12} xs={12}  sx={{  backgroundImage: `url(${nubes})` }}  >
-         <Grid item height={600} sx={{ backgroundColor: '#FFFFFF' }} xl={5} lg={5} md={5} sm={12} xs={12}>
-        <div ref={ref} className={showImage ? 'svgi animate__animated animate__fadeInLeft animate__swing' : 'ok'}>
+    <Grid container xl={12} lg={12} md={12} sm={12} xs={12}  /* sx={{  backgroundImage:`url(${backgroundImage})`,
+    backgroundSize: 'cover', }} */  >
+         <Grid item height={600} /* sx={{ backgroundColor: '#FFFFFF', backgroundImage: `url(${test})`,
+          backgroundSize: 'cover' }} */ xl={5} lg={5} md={5} sm={12} xs={12}>
+         
+            <div ref={ref} className={showImage ? 'svgi animate__animated animate__fadeInLeft animate__swing' : 'ok'}>
           {showImage && (
             <Image src={SVG} alt="imag" style={{ height: '100vh', width: '50em', position: 'relative', marginTop: 80 }} />
           )}
         </div>
+    
+    
       </Grid>
 
       <Grid item height={700} xl={7} lg={7} md={7} sm={12} xs={12} 
