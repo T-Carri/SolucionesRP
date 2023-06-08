@@ -5,10 +5,12 @@ import { Inter } from 'next/font/google'
 import { TopNav } from '@/components/top-nav';
 import { styled } from '@mui/material/styles';
 import { Box } from '@mui/system';
-import { Card, Grid, CardContent } from '@mui/material';
-import Hero from '@/components/Hero';
-import SVG from '../assets/trace.svg'
-import Carousel from '@/components/Carousel';
+import { Card, Grid, CardContent, Container } from '@mui/material';
+import { Presentacion } from '@/components/Presentacion';
+import { Servicios } from '@/components/Servicios';
+import { Clientes } from '@/components/Clientes';
+
+
 const inter = Inter({ subsets: ['latin'] })
 
 
@@ -17,7 +19,8 @@ const LayoutRoot = styled('div')(() => ({
   display: 'flex',
   flex: '1 1 auto',
   maxWidth: '100%',
-  marginTop:'0em'
+  marginTop:'0em',
+
 /*   [theme.breakpoints.up('lg')]: {
     paddingLeft: SIDE_NAV_WIDTH
   } */
@@ -26,7 +29,9 @@ const LayoutContainer = styled('div')({
    display: 'flex',
   flex: '1 1 auto',
   flexDirection: 'column',
-  width: '100%' 
+  width: '100%',
+ 
+
 });
 
 
@@ -57,27 +62,16 @@ export default function Home() {
       </Head>
 
 {/* <TopNav/> */}
+    <TopNav/>
 
       <LayoutRoot>
         <LayoutContainer>
         <main>
 
-          
-    <Image src={SVG} alt="Icon" width={115} height={115}  style={{ width:'100%', zIndex:9999, right:520, top:13, position:'fixed' }}  />
-    <TopNav/>
-    
-    <Card elevation={0} sx={{height:130, width:200, backgroundColor: 'white', ml:15, p:2}} style={{  position: 'fixed', zIndex:7777}}>
-    
-
-          </Card>
+<Presentacion/>
+    <Servicios/>
+   <Clientes/>
         
-<Hero/>
-
-
-<Carousel />
-
-<Box  height={300} style={{backgroundColor: 'red', position:'absolute',  marginTop:'0%'}}  ></Box>
-
 
 </main> 
 </LayoutContainer>

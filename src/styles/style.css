@@ -15,3 +15,12 @@
       transform: scale(1); /* Vuelve al tamaño normal de la imagen */
     }
   }
+
+
+  .svgi {
+    display: inline-block;
+  
+  
+    animation: animate__backInLeft; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */
+  }

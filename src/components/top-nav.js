@@ -1,8 +1,9 @@
+import React, { useState, useRef, useEffect }  from 'react'
 import PropTypes from 'prop-types';
-/* import BellIcon from '@heroicons/react/24/solid/BellIcon';
-import UsersIcon from '@heroicons/react/24/solid/UsersIcon';
-import Bars3Icon from '@heroicons/react/24/solid/Bars3Icon';
-import MagnifyingGlassIcon from '@heroicons/react/24/solid/MagnifyingGlassIcon'; */
+import SVG from '../assets/trace.svg'
+import SVG1 from '../assets/logo.svg'
+import Image from 'next/image';
+import { useInView } from 'react-intersection-observer';
 import {
   Avatar,
   Badge,
@@ -21,13 +22,22 @@ import { useTheme } from '@mui/material/styles';
 import { AccountPopover } from './account-popover'; */
 
 const SIDE_NAV_WIDTH = 0;
-const TOP_NAV_HEIGHT = 64;
+const TOP_NAV_HEIGHT = 20;
 
 export const TopNav = () => {
     const theme = useTheme()
  /*  const { onNavOpen } = props; */
  // const lgUp = useMediaQuery(theme.breakpoints.up('lg'));
- 
+ const [showImage, setShowImage] = useState(false);
+ const [ref, inView] = useInView({
+   triggerOnce: true, // Solo activar una vez
+ });
+
+ useEffect(() => {
+   if (inView) {
+     setShowImage(true);
+   }
+ }, [inView]); 
 
   return (
     <>
@@ -55,6 +65,27 @@ export const TopNav = () => {
       >
         <Stack
           alignItems="start"
+          justifyContent="flex-start"
+          direction="row"
+          
+          spacing={2}
+          sx={{
+            minHeight: TOP_NAV_HEIGHT,
+            px: 2
+          }}
+        >
+
+
+<div ref={ref} className={showImage ? 'svgi animate__animated animate__slideInDown' : 'ok'}>
+          {showImage && (
+             <Image  src={SVG1} alt="Icon" width={200} height={115} style={{marginLeft:250}}  />
+          )}
+        </div>
+
+        </Stack>
+         
+        <Stack
+          alignItems="start"
           justifyContent="flex-end"
           direction="row"
           
@@ -64,6 +95,7 @@ export const TopNav = () => {
             px: 2
           }}
         >
+         
            <Stack
             alignItems="center"
             direction="row"
