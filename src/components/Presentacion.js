@@ -3,13 +3,13 @@ import Grid from '@mui/system/Unstable_Grid/Grid'
 import 'animate.css';
 import Image from 'next/image';
 import SVG from '../assets/sapiens.svg'
-import nubes from '../assets/clouds.svg'
+//import nubes from '../assets/clouds.svg'
 import { Typography, Button, Box } from '@mui/material';
 import { useInView } from 'react-intersection-observer';
 
 const test = 'https://images.unsplash.com/photo-1605478185737-99ae313e940c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTU2fHx0ZXh0dXJhc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60'
 const backgroundImage = 'https://mui.com/static/themes/onepirate/productCurvyLines.png'
-
+const clouds = 'https://www.solucionesrp.com.mx/clouds.svg'
 export const Presentacion = () => {
     const [showImage, setShowImage] = useState(false);
 
@@ -42,8 +42,8 @@ const [ref, inView, entry] = useInView(options);
     
 
   return (
-    <Grid container xl={12} lg={12} md={12} sm={12} xs={12}  /* sx={{  backgroundImage:`url(${backgroundImage})`,
-    backgroundSize: 'cover', }} */  >
+    <Grid container xl={12} lg={12} md={12} sm={12} xs={12}  sx={{  backgroundImage:`url(${clouds})`,
+    backgroundSize: 'cover' }} >
          <Grid item height={600} /* sx={{ backgroundColor: '#FFFFFF', backgroundImage: `url(${test})`,
           backgroundSize: 'cover' }} */ xl={5} lg={5} md={5} sm={12} xs={12}>
          
