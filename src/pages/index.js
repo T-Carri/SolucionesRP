@@ -11,6 +11,7 @@ import { Servicios } from '@/components/Servicios';
 import { Clientes } from '@/components/Clientes';
 import {PublicidadAspelNube} from '@/components/PublicidadAspelNube';
 import { Nosotros } from '@/components/Nosotros';
+import PublicidadCarousel from '@/components/PublicidadCarousel';
 //import nubes from '../assets/clouds.svg'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -33,7 +34,7 @@ const LayoutContainer = styled('div')({
   flex: '1 1 auto',
   flexDirection: 'column',
   width: '100%',
-  backgroundImage:`url(${clouds})`,  
+  backgroundImage:`url(${clouds})`
  /*  backgroundSize: 'cover' */
 
 });
@@ -74,8 +75,8 @@ export default function Home() {
 
 <Presentacion/>
 <Nosotros/>
+<PublicidadCarousel/>
 
-<PublicidadAspelNube/> 
 
 
     <Servicios/>
