@@ -20,7 +20,7 @@ import React, { useEffect } from 'react';
 import SwiperCore, { EffectCoverflow} from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, autoplay } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -39,17 +39,23 @@ const MyComponent = () =>{
   return (
     <>
       <Swiper
-        slidesPerView={2}
-        spaceBetween={50}
+        slidesPerView={3}
+        spaceBetween={10}
         centeredSlides={true}
         pagination={{
           clickable: true,
         }}
         modules={[Pagination]}
         className="mySwiper"
+        autoplay={{
+          delay: 500,
+          disableOnInteraction: false,
+        }}
       >
+
+
         <SwiperSlide>
-        <Card elevation={0} sx={{height:500, width:750, backgroundColor: 'white'}} style={{display:'fixed'}}   >
+        <Card elevation={0} sx={{height:180, width:450, backgroundColor: 'white'}} style={{display:'fixed'}}   >
         <CardMedia
         component="img"
         alt="green iguana"
@@ -73,81 +79,7 @@ const MyComponent = () =>{
       </Card>
         </SwiperSlide>
         <SwiperSlide>
-        <Card elevation={0} sx={{height:580, width:750, backgroundColor: 'white'}} style={{display:'fixed'}}   >
-        <CardMedia
-        component="img"
-        alt="green iguana"
-        height="140"
-        image="https://swiperjs.com/demos/images/nature-3.jpg"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-
-      </Card>
-
-        </SwiperSlide>
-        <SwiperSlide>
-        <Card elevation={0} sx={{height:380, width:450, backgroundColor: 'white'}} style={{display:'fixed'}}   >
-        <CardMedia
-        component="img"
-        alt="green iguana"
-        height="140"
-        image="https://swiperjs.com/demos/images/nature-3.jpg"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-
-      </Card>
-
-        </SwiperSlide>
-        <SwiperSlide>
-        <Card elevation={0} sx={{height:380, width:450, backgroundColor: 'white'}} style={{display:'fixed'}}   >
-        <CardMedia
-        component="img"
-        alt="green iguana"
-        height="140"
-        image="https://swiperjs.com/demos/images/nature-3.jpg"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-
-      </Card>
-        </SwiperSlide>
-        <SwiperSlide>
-        <Card elevation={0} sx={{height:380, width:450, backgroundColor: 'white'}} style={{display:'fixed'}}   >
+        <Card elevation={0} sx={{height:180, width:450, backgroundColor: 'white'}} style={{display:'fixed'}}   >
         <CardMedia
         component="img"
         alt="green iguana"
@@ -175,7 +107,32 @@ const MyComponent = () =>{
         </SwiperSlide>
         <SwiperSlide>
 
-        <Card elevation={0} sx={{height:380, width:450, backgroundColor: 'white'}} style={{display:'fixed'}}   >
+        <Card elevation={0} sx={{height:180, width:450, backgroundColor: 'white'}} style={{display:'fixed'}}   >
+        <CardMedia
+        component="img"
+        alt="green iguana"
+        height="140"
+        image="https://swiperjs.com/demos/images/nature-3.jpg"
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          Lizard
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          Lizards are a widespread group of squamate reptiles, with over 6,000
+          species, ranging across all continents except Antarctica
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small">Share</Button>
+        <Button size="small">Learn More</Button>
+      </CardActions>
+
+      </Card>
+        </SwiperSlide>
+    
+        <SwiperSlide>
+        <Card elevation={0} sx={{height:180, width:450, backgroundColor: 'white'}} style={{display:'fixed'}}   >
         <CardMedia
         component="img"
         alt="green iguana"
@@ -199,8 +156,7 @@ const MyComponent = () =>{
       </Card>
         </SwiperSlide>
         <SwiperSlide>
-
-        <Card elevation={0} sx={{height:380, width:450, backgroundColor: 'white'}} style={{display:'fixed'}}   >
+        <Card elevation={0} sx={{height:180, width:450, backgroundColor: 'white'}} style={{display:'fixed'}}   >
         <CardMedia
         component="img"
         alt="green iguana"
@@ -222,36 +178,13 @@ const MyComponent = () =>{
       </CardActions>
 
       </Card>
-
-
-        </SwiperSlide>
-        <SwiperSlide>
-        <Card elevation={0} sx={{height:380, width:450, backgroundColor: 'white'}} style={{display:'fixed'}}   >
-        <CardMedia
-        component="img"
-        alt="green iguana"
-        height="140"
-        image="https://swiperjs.com/demos/images/nature-3.jpg"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-
-      </Card>
+     
+   
+   
         </SwiperSlide>
         <SwiperSlide>
 
-        <Card elevation={0} sx={{height:380, width:450, backgroundColor: 'white'}} style={{display:'fixed'}}   >
+        <Card elevation={0} sx={{height:180, width:450, backgroundColor: 'white'}} style={{display:'fixed'}}   >
         <CardMedia
         component="img"
         alt="green iguana"
@@ -274,6 +207,7 @@ const MyComponent = () =>{
 
       </Card>
         </SwiperSlide>
+    
       </Swiper>
     </>
   );

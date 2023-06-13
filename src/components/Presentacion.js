@@ -44,7 +44,7 @@ const [ref, inView, entry] = useInView(options);
   return (
     <Grid container xl={12} lg={12} md={12} sm={12} xs={12}  sx={{  backgroundImage:`url(${clouds})`,
     backgroundSize: 'cover' }} >
-         <Grid item height={600} /* sx={{ backgroundColor: '#FFFFFF', backgroundImage: `url(${test})`,
+         <Grid item height={800} /* sx={{ backgroundColor: '#FFFFFF', backgroundImage: `url(${test})`,
           backgroundSize: 'cover' }} */ xl={5} lg={5} md={5} sm={12} xs={12}>
          
             <div ref={ref} className={showImage ? 'svgi animate__animated animate__fadeInLeft animate__swing' : 'ok'}>
@@ -56,7 +56,7 @@ const [ref, inView, entry] = useInView(options);
     
       </Grid>
 
-      <Grid item height={700} xl={7} lg={7} md={7} sm={12} xs={12} 
+      <Grid item height={800} xl={7} lg={7} md={7} sm={12} xs={12} 
         sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',  bgcolor: '#ECF9FF', overflow: 'hidden', backgroundImage: `url(${backgroundImage})` }}>
        
         <Typography color="inherit" align="center" variant="h2" marked="center" >

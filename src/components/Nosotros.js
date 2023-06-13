@@ -10,7 +10,7 @@ export const Nosotros = () => {
     
   return (
     <Grid container direction="column"  justifyContent="center" alignItems="center" 
-    height={700} xl={12} lg={12} md={12} sm={12} xs={12} style={{ backgroundImage:`url(${clouds})`,  backgroundSize: 'cover', marginTop:50 }}>
+    height={500} xl={12} lg={12} md={12} sm={12} xs={12} style={{ backgroundImage:`url(${clouds})`,  backgroundSize: 'cover', marginTop:0 }}>
 
 <Grid item m={3} mt={7} p={5} xl={5} lg={5} md={12} sm={12} xs={12}   >
 <Typography color="white" align="center" variant="h4" sx={{ mb: 10, mt: { xs: 2, sm: 3 }  }}>
