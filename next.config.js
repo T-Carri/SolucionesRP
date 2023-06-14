@@ -8,7 +8,7 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'www.solucionesrp.com.mx',
         port: '',
-        pathname: '/businesstwo.png',
+        pathname: '/**',
       },
     ],
   },

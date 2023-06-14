@@ -8,12 +8,13 @@ import { Box } from '@mui/system';
 import { Card, Grid, CardContent, Container } from '@mui/material';
 import { Presentacion } from '@/components/Presentacion';
 import { Servicios } from '@/components/Servicios';
-import { Clientes } from '@/components/Clientes';
+import  {Clientes}  from '@/components/Clientes';
 import {PublicidadAspelNube} from '@/components/PublicidadAspelNube';
 import { Nosotros } from '@/components/Nosotros';
 import PublicidadCarousel from '@/components/PublicidadCarousel';
 import CapturadorEmails from '@/components/CapturadorEmails';
 import  Footer  from '@/components/Footer';
+import disparador from '@/components/carousel/disparador';
 //import nubes from '../assets/clouds.svg'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -77,7 +78,8 @@ export default function Home() {
 
 <Presentacion/>
 <Nosotros/>
-   <Clientes/>
+<disparador/>
+   {/* <Clientes/> */}
 <PublicidadCarousel/>
 
 <CapturadorEmails/>

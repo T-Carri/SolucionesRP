@@ -1,221 +1,68 @@
 /* import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react'; */
 
-import 'swiper/css/effect-coverflow';
-
-
-import 'swiper/swiper-bundle.css';
-//import 'swiper/components/effect-coverflow/effect-coverflow.scss';
-import CardActions from '@mui/material/CardActions';
-
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-
-
-
-
-import { Card, Grid, CardContent } from '@mui/material';
-import React, { useEffect } from 'react';
-import SwiperCore, { EffectCoverflow} from 'swiper';
-import 'swiper/swiper-bundle.min.css';
-
-import { Swiper, SwiperSlide, autoplay } from "swiper/react";
+import React, { useRef, useState } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
-//import "./styles.css";
+
 
 // import required modules
-import { Pagination } from "swiper";
+import { Autoplay, Pagination, Navigation } from "swiper";
+import Image from "next/image";
 
 
-
-
-const MyComponent = () =>{
-
+const c0 = 'https://www.solucionesrp.com.mx/cliente0.JPG'
+const c1 = 'https://www.solucionesrp.com.mx/cliente1.JPG'
+const c2 = 'https://www.solucionesrp.com.mx/cliente2.JPG'
+const c3 = 'https://www.solucionesrp.com.mx/cliente3.JPG'
+const c4 = 'https://www.solucionesrp.com.mx/cliente4.JPG'
+const c5 = 'https://www.solucionesrp.com.mx/cliente5.JPG'
+const c6 = 'https://www.solucionesrp.com.mx/cliente6.JPG'
+const c7 = 'https://www.solucionesrp.com.mx/cliente7.JPG'
+const c8 = 'https://www.solucionesrp.com.mx/cliente8.JPG'
+const c9 = 'https://www.solucionesrp.com.mx/cliente9.JPG'
+const c10 = 'https://www.solucionesrp.com.mx/cliente10.JPG'
+export default function App() {
   return (
     <>
       <Swiper
-        slidesPerView={3}
-        spaceBetween={10}
+        spaceBetween={30}
+        slidesPerView={4}
+      
         centeredSlides={true}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
-        className="mySwiper"
         autoplay={{
-          delay: 500,
+          delay: 2500,
           disableOnInteraction: false,
         }}
+       
+        pagination={{
+          clickable: false,
+        }}
+        navigation={false}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper"
       >
-
-
         <SwiperSlide>
-        <Card elevation={0} sx={{height:180, width:450, backgroundColor: 'white'}} style={{display:'fixed'}}   >
-        <CardMedia
-        component="img"
-        alt="green iguana"
-        height="140"
-        image="https://swiperjs.com/demos/images/nature-3.jpg"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-
-      </Card>
+          <Image src={c0} width={10} height={10}/>
         </SwiperSlide>
-        <SwiperSlide>
-        <Card elevation={0} sx={{height:180, width:450, backgroundColor: 'white'}} style={{display:'fixed'}}   >
-        <CardMedia
-        component="img"
-        alt="green iguana"
-        height="140"
-        image="https://swiperjs.com/demos/images/nature-3.jpg"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-
-      </Card>
-     
-   
-   
-        </SwiperSlide>
-        <SwiperSlide>
-
-        <Card elevation={0} sx={{height:180, width:450, backgroundColor: 'white'}} style={{display:'fixed'}}   >
-        <CardMedia
-        component="img"
-        alt="green iguana"
-        height="140"
-        image="https://swiperjs.com/demos/images/nature-3.jpg"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-
-      </Card>
-        </SwiperSlide>
-    
-        <SwiperSlide>
-        <Card elevation={0} sx={{height:180, width:450, backgroundColor: 'white'}} style={{display:'fixed'}}   >
-        <CardMedia
-        component="img"
-        alt="green iguana"
-        height="140"
-        image="https://swiperjs.com/demos/images/nature-3.jpg"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-
-      </Card>
-        </SwiperSlide>
-        <SwiperSlide>
-        <Card elevation={0} sx={{height:180, width:450, backgroundColor: 'white'}} style={{display:'fixed'}}   >
-        <CardMedia
-        component="img"
-        alt="green iguana"
-        height="140"
-        image="https://swiperjs.com/demos/images/nature-3.jpg"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-
-      </Card>
-     
-   
-   
-        </SwiperSlide>
-        <SwiperSlide>
-
-        <Card elevation={0} sx={{height:180, width:450, backgroundColor: 'white'}} style={{display:'fixed'}}   >
-        <CardMedia
-        component="img"
-        alt="green iguana"
-        height="140"
-        image="https://swiperjs.com/demos/images/nature-3.jpg"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-
-      </Card>
-        </SwiperSlide>
-    
+        <SwiperSlide><Image src={c0} width={200} height={120}/></SwiperSlide>
+        <SwiperSlide><Image src={c1} width={200} height={120}/></SwiperSlide>
+        <SwiperSlide><Image src={c2} width={200} height={120}/></SwiperSlide>
+        <SwiperSlide><Image src={c3} width={200} height={120}/></SwiperSlide>
+        <SwiperSlide><Image src={c4} width={200} height={120}/></SwiperSlide>
+        <SwiperSlide><Image src={c5} width={200} height={120}/></SwiperSlide>
+        <SwiperSlide><Image src={c6} width={200} height={120}/></SwiperSlide>
+        <SwiperSlide><Image src={c7} width={200} height={120}/></SwiperSlide>
       </Swiper>
     </>
   );
 }
-
-export default MyComponent;
-
-
 
 
 //Este whisper carousel es interesante 

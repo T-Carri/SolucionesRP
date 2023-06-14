@@ -56,3 +56,42 @@
   stroke-dasharray: 125.6;
   transform: rotate(-90deg);
 }
+
+
+
+.carousel {
+  display: flex;
+  align-items: center;
+}
+
+.carousel-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.carousel-button.prev {
+  margin-right: 10px;
+}
+
+.carousel-button.next {
+  margin-left: 10px;
+}
+
+.carousel-images {
+  display: flex;
+  overflow: hidden;
+}
+
+.carousel-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.carousel-image.active {
+  opacity: 1;
+}
