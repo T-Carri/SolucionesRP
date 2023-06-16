@@ -69,7 +69,7 @@ function CapturadorEmails() {
               right: 0,
               bottom: 0,
               width: '100%',
-            /*   background: 'url(https://www.solucionesrp.com.mx/patternpad1.svg)', */
+             background: 'url(https://www.solucionesrp.com.mx/patternpad3.svg)', 
             }}
           />
           <Box

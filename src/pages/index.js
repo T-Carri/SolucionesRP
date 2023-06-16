@@ -1,25 +1,26 @@
+import {lazy} from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import { Inter } from 'next/font/google'
 //import styles from '@/styles/Home.module.css'
 import { TopNav } from '@/components/top-nav';
 import { styled } from '@mui/material/styles';
 import { Box } from '@mui/system';
 import { Card, Grid, CardContent, Container } from '@mui/material';
-import { Presentacion } from '@/components/Presentacion';
-import { Servicios } from '@/components/Servicios';
-import  {Clientes}  from '@/components/Clientes';
-import {PublicidadAspelNube} from '@/components/PublicidadAspelNube';
-import { Nosotros } from '@/components/Nosotros';
-import PublicidadCarousel from '@/components/PublicidadCarousel';
-import CapturadorEmails from '@/components/CapturadorEmails';
-import  Footer  from '@/components/Footer';
-import disparador from '@/components/carousel/disparador';
+import { Presentacion } from '@/sections/presentacion/Presentacion';
+
+import { Nosotros } from '@/sections/nosotros/Nosotros';
+/* import PublicidadCarousel from '@/sections/carouselAspelNube/PublicidadCarousel'; */
+import CapturadorEmails from '@/sections/capturadorEmail/CapturadorEmails';
+import  Footer  from '@/sections/footer/Footer';
+import ServiciosIndex from '@/sections/servicios/ServiciosIndex';
+const PublicidadCarousel = dynamic(() => import('@/sections/carouselAspelNube/PublicidadCarousel'));
 //import nubes from '../assets/clouds.svg'
 
 const inter = Inter({ subsets: ['latin'] })
 const backgroundImage = 'https://images.unsplash.com/photo-1541415534056-fad380cd68a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=706&q=80'
-const clouds = 'https://www.solucionesrp.com.mx/patternpad1.svg'
+const clouds = 'https://www.solucionesrp.com.mx/patternpad3.svg'
 
 const SIDE_NAV_WIDTH = 280;
 const LayoutRoot = styled('div')(() => ({
@@ -70,22 +71,22 @@ export default function Home() {
       </Head>
 
 {/* <TopNav/> */}
-    <TopNav/>
+  {/*   <TopNav/> */}
 
       <LayoutRoot>
         <LayoutContainer>
         <main>
 
+
 <Presentacion/>
 <Nosotros/>
-<disparador/>
-   {/* <Clientes/> */}
 <PublicidadCarousel/>
-
+<ServiciosIndex/>
+   {/* <Clientes/> */}
 <CapturadorEmails/>
 <Footer/>
 
-{/*     <Servicios/> */}
+   {/* <Servicios/>  */}
         
 
 </main> 

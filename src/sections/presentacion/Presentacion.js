@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect }  from 'react'
 import Grid from '@mui/system/Unstable_Grid/Grid'
 import 'animate.css';
 import Image from 'next/image';
-import SVG from '../assets/sapiens.svg'
+import SVG from '../../assets/sapiens.svg'
 //import nubes from '../assets/clouds.svg'
 import { Typography, Button, Box } from '@mui/material';
 import { useInView } from 'react-intersection-observer';
